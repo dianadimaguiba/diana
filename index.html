@@ -1,0 +1,1029 @@
+<html lang="en">
+<head>
+    <!-- pt: single-us-resources --> 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQQHU19QDBACV1ZTDwUCVVI=",licenseKey:"1f41b76344",applicationID:"237184536"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var i,o=t("ee"),a=t(23),c={};try{i=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,i.indexOf("dev")!==-1&&(c.dev=!0),i.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&o.on("internal-error",function(t){r(t.stack)}),c.dev&&o.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,c){try{p?p-=1:i(c||new UncaughtException(t,e,n),!0)}catch(f){try{o("ierr",[f,s.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function i(t,e){var n=e?null:s.now();o("err",[t,n])}var o=t("handle"),a=t(24),c=t("ee"),s=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(9),t(8),"addEventListener"in window&&t(5),s.xhrWrappable&&t(10),d=!0)}c.on("fn-start",function(t,e,n){d&&(p+=1)}),c.on("fn-err",function(t,e,n){d&&!n[l]&&(f(n,l,function(){return!0}),this.thrown=!0,i(n))}),c.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),c.on("internal-error",function(t){o("ierr",[t,s.now(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var i=t("ee"),o=t("handle"),a=t(9),c=t(8),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",g="pushState",y=t("loader");y.features.stn=!0,t(7),"addEventListener"in window&&t(5);var x=NREUM.o.EV;i.on(m,function(t,e){var n=t[0];n instanceof x&&(this.bstStart=y.now())}),i.on(w,function(t,e){var n=t[0];n instanceof x&&o("bst",[n,e,this.bstStart,y.now()])}),a.on(m,function(t,e,n){this.bstStart=y.now(),this.bstType=n}),a.on(w,function(t,e){o(v,[e,this.bstStart,y.now(),this.bstType])}),c.on(m,function(){this.bstStart=y.now()}),c.on(w,function(t,e){o(v,[e,this.bstStart,y.now(),"requestAnimationFrame"])}),i.on(g+p,function(t){this.time=y.now(),this.startPath=location.pathname+location.hash}),i.on(g+h,function(t){o("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){o(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){o(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&i(e)}function i(t){c.inPlace(t,[u,d],"-",o)}function o(t,e){return t[1]}var a=t("ee").get("events"),c=t("wrap-function")(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(i(window),i(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=o(arguments),e={};i.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var c=r.apply(this,t);return i.emit(n+"start",[t,a],c),c.then(function(t){return i.emit(n+"end",[null,t],c),t},function(t){throw i.emit(n+"end",[t],c),t})})}var i=t("ee").get("fetch"),o=t(24),a=t(23);e.exports=i;var c=window,s="fetch-",f=s+"body-",u=["arrayBuffer","blob","json","text","formData"],d=c.Request,l=c.Response,p=c.fetch,h="prototype",m="nr@context";d&&l&&p&&(a(u,function(t,e){r(d[h],e,f),r(l[h],e,f)}),r(c,"fetch",s),i.on(s+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),i.emit(s+"done",[null,e],n)}else i.emit(s+"done",[t],n)}))},{}],7:[function(t,e,n){var r=t("ee").get("history"),i=t("wrap-function")(r);e.exports=r;var o=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;o&&o.pushState&&o.replaceState&&(a=o),i.inPlace(a,["pushState","replaceState"],"-")},{}],8:[function(t,e,n){var r=t("ee").get("raf"),i=t("wrap-function")(r),o="equestAnimationFrame";e.exports=r,i.inPlace(window,["r"+o,"mozR"+o,"webkitR"+o,"msR"+o],"raf-"),r.on("raf-start",function(t){t[0]=i(t[0],"fn-")})},{}],9:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function i(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var o=t("ee").get("timer"),a=t("wrap-function")(o),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=o,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),o.on(s+u,r),o.on(c+u,i)},{}],10:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function i(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,g,"fn-",c)}function o(t){y.push(t),h&&(b?b.then(a):w?w(a):(E=-E,R.data=E))}function a(){for(var t=0;t<y.length;t++)r([],y[t]);y.length&&(y=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",g=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],y=[];e.exports=u;var x=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(v,i,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,x),x.prototype=p.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),o(e)}),u.on("open-xhr-start",r),h){var b=m&&m.resolve();if(!w&&!m){var E=1,R=document.createTextNode(E);new h(a).observe(R,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],11:[function(t,e,n){function r(t){if(!c(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,f=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=p.generateSpanId(),m=p.generateTraceId(),w=Date.now(),v={spanId:h,traceId:m,timestamp:w};return(t.sameOrigin||s(t)&&l())&&(v.traceContextParentHeader=i(h,m),v.traceContextStateHeader=o(h,w,n,r,f)),(t.sameOrigin&&!u()||!t.sameOrigin&&s(t)&&d())&&(v.newrelicHeader=a(h,m,w,n,r,f)),v}function i(t,e){return"00-"+e+"-"+t+"-01"}function o(t,e,n,r,i){var o=0,a="",c=1,s="",f="";return i+"@nr="+o+"-"+c+"-"+n+"-"+r+"-"+t+"-"+a+"-"+s+"-"+f+"-"+e}function a(t,e,n,r,i,o){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var c={v:[0,1],d:{ty:"Browser",ac:r,ap:i,id:t,tr:e,ti:n}};return o&&r!==o&&(c.d.tk=o),btoa(JSON.stringify(c))}function c(t){return f()&&s(t)}function s(t){var e=!1,n={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(n=NREUM.init.distributed_tracing),t.sameOrigin)e=!0;else if(n.allowed_origins instanceof Array)for(var r=0;r<n.allowed_origins.length;r++){var i=h(n.allowed_origins[r]);if(t.hostname===i.hostname&&t.protocol===i.protocol&&t.port===i.port){e=!0;break}}return e}function f(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.enabled}function u(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.exclude_newrelic_header}function d(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&NREUM.init.distributed_tracing.cors_use_newrelic_header!==!1}function l(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.cors_use_tracecontext_headers}var p=t(20),h=t(13);e.exports={generateTracePayload:r,shouldGenerateTrace:c}},{}],12:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<l;r++)t.removeEventListener(d[r],this.listener,!1);e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):o(this,t),n.cbTime=this.cbTime,u.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime]))}}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=s(e),t.sameOrigin=t.parsedOrigin.sameOrigin}function o(t,e){t.params.status=e.status;var n=w(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(13),f=t(11).generateTracePayload,u=t("ee"),d=["load","error","abort","timeout"],l=d.length,p=t("id"),h=t(17),m=t(16),w=t(14),v=window.XMLHttpRequest;a.features.xhr=!0,t(10),t(6),u.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,t.addEventListener("load",function(n){o(e,t)},!1),h&&(h>34||h<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),u.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=f(this.parsedOrigin);if(n){var r=!1;n.newrelicHeader&&(e.setRequestHeader("newrelic",n.newrelicHeader),r=!0),n.traceContextParentHeader&&(e.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&e.setRequestHeader("tracestate",n.traceContextStateHeader),r=!0),r&&(this.dt=n)}}),u.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],i=this;if(n&&r){var o=m(r);o&&(n.txSize=o)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||i.loadCaptureCalled||(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}};for(var c=0;c<l;c++)e.addEventListener(d[c],this.listener,!1)}),u.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),u.on("xhr-load-added",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),u.on("addEventListener-end",function(t,e){e instanceof v&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],e)}),u.on("removeEventListener-end",function(t,e){e instanceof v&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],e)}),u.on("fn-start",function(t,e,n){e instanceof v&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),u.on("fn-end",function(t,e){this.xhrCbStart&&u.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),u.on("fetch-before-start",function(t){function e(t,e){var n=!1;return e.newrelicHeader&&(t.set("newrelic",e.newrelicHeader),n=!0),e.traceContextParentHeader&&(t.set("traceparent",e.traceContextParentHeader),e.traceContextStateHeader&&t.set("tracestate",e.traceContextStateHeader),n=!0),n}var n,r=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&&t[0].url&&(n=t[0].url),n&&(this.parsedOrigin=s(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var i=f(this.parsedOrigin);if(i&&(i.newrelicHeader||i.traceContextParentHeader))if("string"==typeof t[0]){var o={};for(var a in r)o[a]=r[a];o.headers=new Headers(r.headers||{}),e(o.headers,i)&&(this.dt=i),t.length>1?t[1]=o:t.push(o)}else t[0]&&t[0].headers&&e(t[0].headers,i)&&(this.dt=i)})}},{}],13:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];var e=document.createElement("a"),n=window.location,i={};e.href=t,i.port=e.port;var o=e.href.split("://");!i.port&&o[1]&&(i.port=o[1].split("/")[0].split("@").pop().split(":")[1]),i.port&&"0"!==i.port||(i.port="https"===o[0]?"443":"80"),i.hostname=e.hostname||n.hostname,i.pathname=e.pathname,i.protocol=o[0],"/"!==i.pathname.charAt(0)&&(i.pathname="/"+i.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,c=e.hostname===document.domain&&e.port===n.port;return i.sameOrigin=a&&(!e.hostname||c),"/"===i.pathname&&(r[t]=i),i}},{}],14:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&&null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?i(t.response):"text"===n||""===n||void 0===n?i(t.responseText):void 0}var i=t(16);e.exports=r},{}],15:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[f.now()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(23),c=t(24),s=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,e){u[e]=i(l+e,!0,"api")}),u.addPageAction=i(l+"addPageAction",!0),u.setCurrentRouteName=i(l+"routeName",!0),e.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(p+"tracer",[f.now(),t,n],r),function(){if(s.emit((i?"":"no-")+"fn-start",[f.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw s.emit("fn-err",[arguments,this,t],n),t}finally{s.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){h[e]=i(p+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,f.now(),!1,e])}},{}],16:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],17:[function(t,e,n){var r=0,i=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);i&&(r=+i[1]),e.exports=r},{}],18:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(25);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],19:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof h&&!w){var e=Math.round(t.timeStamp),n={type:t.type};e<=l.now()?n.fid=l.now()-e:e>l.offset&&e<=Date.now()?(e-=l.offset,n.fid=l.now()-e):e=l.now(),w=!0,d("timing",["fi",e,n])}}function c(t){d("pageHide",[l.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var s,f,u,d=t("handle"),l=t("loader"),p=t(22),h=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(m){}f=new PerformanceObserver(i);try{f.observe({entryTypes:["largest-contentful-paint"]})}catch(m){}u=new PerformanceObserver(o);try{u.observe({type:"layout-shift",buffered:!0})}catch(m){}}if("addEventListener"in document){var w=!1,v=["click","keydown","mousedown","pointerdown","touchstart"];v.forEach(function(t){document.addEventListener(t,a,!1)})}p(c)}},{}],20:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var i,o="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",c=0;c<o.length;c++)i=o[c],"x"===i?a+=t().toString(16):"y"===i?(i=3&t()|8,a+=i.toString(16)):a+=i;return a}function i(){return a(16)}function o(){return a(32)}function a(t){function e(){return n?15&n[r++]:16*Math.random()|0}var n=null,r=0,i=window.crypto||window.msCrypto;i&&i.getRandomValues&&Uint8Array&&(n=i.getRandomValues(new Uint8Array(31)));for(var o=[],a=0;a<t;a++)o.push(e().toString(16));return o.join("")}e.exports={generateUuid:r,generateSpanId:i,generateTraceId:o}},{}],21:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,s=c.match(a);s&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=s[1])}e.exports={agent:i,version:o,match:r}},{}],22:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],23:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],24:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],25:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?s(t,c,o):o()}function n(n,r,i,o){if(!l.aborted||o){t&&t(n,r,i);for(var a=e(i),c=m(n),s=c.length,f=0;f<s;f++)c[f].apply(a,r);var d=u[y[n]];return d&&d.push([x,n,r,a]),a}}function p(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function w(t){return d[t]=d[t]||i(n)}function v(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var g={},y={},x={on:p,addEventListener:p,removeEventListener:h,emit:n,get:w,listeners:m,context:e,buffer:v,abort:a,aborted:!1};return x}function o(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var c="nr@context",s=t("gos"),f=t(23),u={},d={},l=e.exports=i();l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=x.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(g,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+x.offset],null,"api"),c("timing",["load",n]);var r=l.createElement("script");r.src="https://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+x.offset],null,"api")}var a=t(18),c=t("handle"),s=t(23),f=t("ee"),u=t(21),d=window,l=d.document,p="addEventListener",h="attachEvent",m=d.XMLHttpRequest,w=m&&m.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var v=""+location,g={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},y=m&&w&&w[p]&&!/CriOS/.test(navigator.userAgent),x=e.exports={offset:a.getLastTimestamp(),now:a,origin:v,features:{},xhrWrappable:y,userAgent:u};t(15),t(19),l[p]?(l[p]("DOMContentLoaded",o,!1),d[p]("load",r,!1)):(l[h]("onreadystatechange",i),d[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var b=0},{}],"wrap-function":[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var i=t("ee"),o=t(24),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,i){function nrWrapper(){var r,a,c,s;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,i],c])}u(e+"start",[r,a,i],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,i,o){i||(i="");var a,c,s,f="-"===i.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+i:i,o,c))}function u(n,r,i){if(!s||e){var o=s;s=!0;try{t.emit(n,r,i,e)}catch(a){l([a,n,r,i])}s=o}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var i in t)c.call(t,i)&&(e[i]=t[i]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=i),n.inPlace=f,n.flag=a,n}},{}]},{},["loader",2,12,4,3]);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        
+<!-- Search Engine Optimization by Rank Math - https://s.rankmath.com/home -->
+<title>The 5 Types of Business-Level Strategies Explained</title>
+<meta name="description" content="Discover the 5 main types of business strategies and which one is best for your business. Use these real business examples to make your business more successful"/>
+<meta name="robots" content="follow, index, max-snippet:120, max-video-preview:-1, max-image-preview:large"/>
+<link rel="canonical" href="https://www.become.co/blog/types-of-business-level-strategies/"/>
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The 5 Types of Business-Level Strategies Explained">
+<meta property="og:description" content="Discover the 5 main types of business strategies and which one is best for your business. Use these real business examples to make your business more successful">
+<meta property="og:url" content="https://www.become.co/blog/types-of-business-level-strategies/">
+<meta property="og:site_name" content="Become">
+<meta property="article:publisher" content="https://www.facebook.com/www.become.co/">
+<meta property="article:author" content="uri.sittan@gmail.com">
+<meta property="article:tag" content="business strategy">
+<meta property="article:tag" content="growth">
+<meta property="article:tag" content="scale up">
+<meta property="article:section" content="AUS Resources">
+<meta property="og:updated_time" content="2019-12-12T11:21:19+02:00">
+<meta property="og:image" content="https://www.become.co/blog/wp-content/uploads/2019/11/business-stratiges.jpg">
+<meta property="og:image:secure_url" content="https://www.become.co/blog/wp-content/uploads/2019/11/business-stratiges.jpg">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="568">
+<meta property="og:image:alt" content="Business Level Strategies">
+<meta property="og:image:type" content="image/jpeg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="The 5 Types of Business-Level Strategies Explained">
+<meta name="twitter:description" content="Discover the 5 main types of business strategies and which one is best for your business. Use these real business examples to make your business more successful">
+<meta name="twitter:image" content="https://www.become.co/blog/wp-content/uploads/2019/11/business-stratiges.jpg">
+<script type="application/ld+json" class="rank-math-schema">{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": [
+                "FinancialService",
+                "Organization"
+            ],
+            "@id": "https://www.become.co/blog/#organization",
+            "name": "Become",
+            "url": "https://www.become.co/blog",
+            "email": "support@become.co",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.become.co/blog/wp-content/uploads/2019/12/favicon.ico-1.png"
+            },
+            "openingHours": [
+                "Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday 09:00-17:00"
+            ],
+            "image": {
+                "@type": "ImageObject",
+                "url": "https://www.become.co/blog/wp-content/uploads/2019/12/favicon.ico-1.png"
+            }
+        },
+        {
+            "@type": "WebSite",
+            "@id": "https://www.become.co/blog/#website",
+            "url": "https://www.become.co/blog",
+            "name": "Become",
+            "publisher": {
+                "@id": "https://www.become.co/blog/#organization"
+            },
+            "inLanguage": "en-US",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://www.become.co/blog/?s={search_term_string}",
+                "query-input": "required name=search_term_string"
+            }
+        },
+        {
+            "@type": "ImageObject",
+            "@id": "https://www.become.co/blog/types-of-business-level-strategies/#primaryImage",
+            "url": "https://www.become.co/blog/wp-content/uploads/2019/11/business-stratiges.jpg",
+            "width": 1024,
+            "height": 568
+        },
+        {
+            "@type": "WebPage",
+            "@id": "https://www.become.co/blog/types-of-business-level-strategies/#webpage",
+            "url": "https://www.become.co/blog/types-of-business-level-strategies/",
+            "name": "The 5 Types of Business-Level Strategies Explained",
+            "datePublished": "2019-11-14T16:10:26+02:00",
+            "dateModified": "2019-12-12T11:21:19+02:00",
+            "isPartOf": {
+                "@id": "https://www.become.co/blog/#website"
+            },
+            "primaryImageOfPage": {
+                "@id": "https://www.become.co/blog/types-of-business-level-strategies/#primaryImage"
+            },
+            "inLanguage": "en-US"
+        },
+        {
+            "@type": "BlogPosting",
+            "headline": "The 5 Types of Business-Level Strategies Explained | Become",
+            "datePublished": "2019-11-14T16:10:26+02:00",
+            "dateModified": "2019-12-12T11:21:19+02:00",
+            "author": {
+                "@type": "Person",
+                "name": "Annabelle Amery"
+            },
+            "publisher": {
+                "@id": "https://www.become.co/blog/#organization"
+            },
+            "description": "\u00a0",
+            "@id": "https://www.become.co/blog/types-of-business-level-strategies/#richSnippet",
+            "isPartOf": {
+                "@id": "https://www.become.co/blog/types-of-business-level-strategies/#webpage"
+            },
+            "image": {
+                "@id": "https://www.become.co/blog/types-of-business-level-strategies/#primaryImage"
+            },
+            "inLanguage": "en-US",
+            "mainEntityOfPage": {
+                "@id": "https://www.become.co/blog/types-of-business-level-strategies/#webpage"
+            }
+        }
+    ]
+}</script>
+<!-- /Rank Math WordPress SEO plugin -->
+
+<link rel='dns-prefetch' href='//ajax.googleapis.com'/>
+<link rel='dns-prefetch' href='//cdnjs.cloudflare.com'/>
+<link rel='dns-prefetch' href='//s7.addthis.com'/>
+<link rel='dns-prefetch' href='//fonts.googleapis.com'/>
+<link rel='dns-prefetch' href='//maxcdn.bootstrapcdn.com'/>
+<link rel='dns-prefetch' href='//s.w.org'/>
+<link rel="alternate" type="application/rss+xml" title="Become &raquo; Feed" href="https://www.become.co/blog/feed/"/>
+<link rel="alternate" type="application/rss+xml" title="Become &raquo; Comments Feed" href="https://www.become.co/blog/comments/feed/"/>
+		<script type="text/javascript">window._wpemojiSettings={"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.become.co\/blog\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.5.1"}};!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);</script>
+		<style type="text/css">img.wp-smiley,img.emoji{display:inline!important;border:none!important;box-shadow:none!important;height:1em!important;width:1em!important;margin:0 .07em!important;vertical-align:-.1em!important;background:none!important;padding:0!important}</style>
+	<link rel='stylesheet' id='wp-block-library-css' href='https://www.become.co/blog/wp-includes/css/dist/block-library/A.style.min.css,qver=5.5.1.pagespeed.cf.sbGIYr7uk6.css' type='text/css' media='all'/>
+<style id='bcct_style-css' media='all'>.bctt-click-to-tweet{display:block;background-color:#fff;position:relative;border:1px solid #ddd;-moz-border-radius:4px;border-radius:4px;padding:15px 15px 15px 30px;margin-bottom:1em;margin-top:1.75em}.bctt-click-to-tweet:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0}.bctt-click-to-tweet .mce-content-body{position:relative;color:#000!important;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif!important;font-size:1.5em;line-height:140%;font-weight:100;text-decoration:none!important;text-transform:none!important;word-wrap:break-word;border-bottom:none!important;box-shadow:none!important}.bctt-ctt-text a{padding:15px 0;margin:15px 0;position:relative;color:#000!important;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif!important;font-size:1.5em;line-height:140%;font-weight:100;text-decoration:none!important;text-transform:none!important;word-wrap:break-word;border-bottom:none!important;box-shadow:none!important}.bctt-ctt-text a:hover{text-decoration:none;color:#999!important}a.bctt-ctt-btn{border-bottom:none!important;margin:0;padding:11px 24px 0 0;position:relative;display:block;text-transform:uppercase;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif!important;font-size:.7em;font-weight:bold;color:#999!important;float:right;text-decoration:none!important;background:transparent url(/blog/wp-content/plugins/better-click-to-tweet/assets/img/xbirdy.png.pagespeed.ic.QJkRJNHcIy.webp) no-repeat right top 10px;box-shadow:none!important}.bctt-ctt-btn:hover{text-decoration:none;color:#666!important;background:transparent url(/blog/wp-content/plugins/better-click-to-tweet/assets/img/xbirdy.png.pagespeed.ic.QJkRJNHcIy.webp) no-repeat right top 8px}</style>
+<style id='contact-form-7-css' media='all'>.wpcf7 .screen-reader-response{position:absolute;overflow:hidden;clip:rect(1px,1px,1px,1px);height:1px;width:1px;margin:0;padding:0;border:0}.wpcf7 form .wpcf7-response-output{margin:2em .5em 1em;padding:.2em 1em;border:2px solid #00a0d2}.wpcf7 form.init .wpcf7-response-output{display:none}.wpcf7 form.sent .wpcf7-response-output{border-color:#46b450}.wpcf7 form.failed .wpcf7-response-output,.wpcf7 form.aborted .wpcf7-response-output{border-color:#dc3232}.wpcf7 form.spam .wpcf7-response-output{border-color:#f56e28}.wpcf7 form.invalid .wpcf7-response-output,.wpcf7 form.unaccepted .wpcf7-response-output{border-color:#ffb900}.wpcf7-form-control-wrap{position:relative}.wpcf7-not-valid-tip{color:#dc3232;font-size:1em;font-weight:normal;display:block}.use-floating-validation-tip .wpcf7-not-valid-tip{position:absolute;top:20%;left:20%;z-index:100;border:1px solid #dc3232;background:#fff;padding:.2em .8em}span.wpcf7-list-item{display:inline-block;margin:0 0 0 1em}span.wpcf7-list-item-label::before,span.wpcf7-list-item-label::after{content:" "}div.wpcf7 .ajax-loader{visibility:hidden;display:inline-block;background-image:url(/blog/wp-content/plugins/contact-form-7/images/ajax-loader.gif.pagespeed.ce.r5YrN3eaRD.gif);width:16px;height:16px;border:none;padding:0;margin:0 0 0 4px;vertical-align:middle}div.wpcf7 .ajax-loader.is-active{visibility:visible}div.wpcf7 div.ajax-error{display:none}div.wpcf7 .placeheld{color:#888}div.wpcf7 input[type="file"]{cursor:pointer}div.wpcf7 input[type="file"]:disabled{cursor:default}div.wpcf7 .wpcf7-submit:disabled{cursor:not-allowed}.wpcf7 input[type="url"],.wpcf7 input[type="email"],.wpcf7 input[type="tel"]{direction:ltr}</style>
+<link rel='stylesheet' id='wpsm_faq-font-awesome-front-css' href='https://www.become.co/blog/wp-content/plugins/faq-responsive/assets/css/font-awesome/css/A.font-awesome.min.css,qver=5.5.1.pagespeed.cf.y61m2n6ZfX.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='wpsm_faq_bootstrap-front-css' href='https://www.become.co/blog/wp-content/plugins/faq-responsive/assets/css/A.bootstrap-front.css,qver=5.5.1.pagespeed.cf.bsUvjeZT-c.css' type='text/css' media='all'/>
+<style id='toc-screen-css' media='all'>#toc_container li,#toc_container ul{margin:0;padding:0}#toc_container.no_bullets li,#toc_container.no_bullets ul,#toc_container.no_bullets ul li,.toc_widget_list.no_bullets,.toc_widget_list.no_bullets li{background:0 0;list-style-type:none;list-style:none}#toc_container.have_bullets li{padding-left:12px}#toc_container ul ul{margin-left:1.5em}#toc_container{background:#f9f9f9;border:1px solid #aaa;padding:10px;margin-bottom:1em;width:auto;display:table;font-size:95%}#toc_container.toc_light_blue{background:#edf6ff}#toc_container.toc_white{background:#fff}#toc_container.toc_black{background:#000}#toc_container.toc_transparent{background:none transparent}#toc_container p.toc_title{text-align:center;font-weight:700;margin:0;padding:0}#toc_container.toc_black p.toc_title{color:#aaa}#toc_container span.toc_toggle{font-weight:400;font-size:90%}#toc_container p.toc_title+ul.toc_list{margin-top:1em}.toc_wrap_left{float:left;margin-right:10px}.toc_wrap_right{float:right;margin-left:10px}#toc_container a{text-decoration:none;text-shadow:none}#toc_container a:hover{text-decoration:underline}.toc_sitemap_posts_letter{font-size:1.5em;font-style:italic}</style>
+<style id='sm-style-css' media='all'>.wpsm-show a,.wpsm-show:active,.wpsm-show:visited{cursor:pointer;text-decoration:none;font-size:100%}.wpsm-show:hover{cursor:pointer;text-decoration:underline}.wpsm-hide a,.wpsm-hide:active,.wpsm-hide:visited{cursor:pointer;text-decoration:none}.wpsm-hide:hover{cursor:pointer;text-decoration:underline}.wpsm-content-hide{display:none}</style>
+<link rel='stylesheet' id='nisarggooglefonts-css' href='//fonts.googleapis.com/css?family=Open+Sans:300,400,700' type='text/css' media='all'/>
+<link rel='stylesheet' id='bootstrap-child-css' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css?ver=5.5.1' type='text/css' media='all'/>
+<link rel='stylesheet' id='nisarg-style-child-css' href='https://www.become.co/blog/wp-content/themes/nisarg-child/A.style.css,qver=5.5.1.pagespeed.cf.WVzRcXk3LZ.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='font-awesome-child-css' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?ver=5.5.1' type='text/css' media='1'/>
+<link rel='stylesheet' id='elementor-icons-css' href='https://www.become.co/blog/wp-content/plugins/elementor/assets/lib/eicons/css/A.elementor-icons.min.css,qver=5.9.1.pagespeed.cf.edcwVl1ESz.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='elementor-animations-css' href='https://www.become.co/blog/wp-content/plugins/elementor/assets/lib/animations/animations.min.css,qver=3.0.11.pagespeed.ce.RgG6VQREE3.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='elementor-frontend-legacy-css' href='https://www.become.co/blog/wp-content/plugins/elementor/assets/css/A.frontend-legacy.min.css,qver=3.0.11.pagespeed.cf.UuRGikotJu.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='elementor-frontend-css' href='https://www.become.co/blog/wp-content/plugins/elementor/assets/css/frontend.min.css,qver=3.0.11.pagespeed.ce.EjDU7T1mTD.css' type='text/css' media='all'/>
+<style id='elementor-post-11636-css' media='all'>.elementor-kit-11636{--e-global-color-primary:#5614dd;--e-global-color-secondary:#54595f;--e-global-color-text:#333;--e-global-color-33bb6a0a:#6ec1e4;--e-global-color-4ede8ecc:#7a7a7a;--e-global-color-12db3816:#61ce70;--e-global-color-77172f08:#4054b2;--e-global-color-2650f66c:#23a455;--e-global-color-3d84f6aa:#000;--e-global-color-2fdf4b97:#fff;--e-global-color-77cad8be:#000;--e-global-color-37e44b92:#6514dd;--e-global-typography-primary-font-family:"Montserrat";--e-global-typography-primary-font-weight:600;--e-global-typography-secondary-font-family:"Montserrat";--e-global-typography-secondary-font-weight:400;--e-global-typography-text-font-family:"Montserrat";--e-global-typography-text-font-weight:400;--e-global-typography-accent-font-family:"Montserrat";--e-global-typography-accent-font-weight:500;font-size:18px}.elementor-kit-11636 a{color:#6514dd}.elementor-section.elementor-section-boxed>.elementor-container{max-width:1000px}{}h1.entry-title{display:var(--page-title-display)}@media (max-width:1024px){.elementor-section.elementor-section-boxed>.elementor-container{max-width:1025px}}@media (max-width:767px){.elementor-section.elementor-section-boxed>.elementor-container{max-width:768px}}</style>
+<link rel='stylesheet' id='elementor-pro-css' href='https://www.become.co/blog/wp-content/plugins/elementor-pro/assets/css/frontend.min.css,qver=3.0.5.pagespeed.ce.jHMJGzpG9C.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='wb-nt-library-css' href='https://www.become.co/blog/wp-content/plugins/news-ticker-for-elementor//assets/css/A.breaking-news-ticker.css,qver=1.0.0.pagespeed.cf.uH3WvotdHg.css' type='text/css' media='all'/>
+<style id='wb-nt-style-css' media='all'>.wb-breaking-news-ticker .bn-controls button{padding:0}.wb-breaking-news-ticker .bn-news li a{text-decoration:none}</style>
+<link rel='stylesheet' id='font-awesome-5-all-css' href='https://www.become.co/blog/wp-content/plugins/elementor/assets/lib/font-awesome/css/A.all.min.css,qver=3.0.11.pagespeed.cf.Xt3eU4aLgn.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='font-awesome-4-shim-css' href='https://www.become.co/blog/wp-content/plugins/elementor/assets/lib/font-awesome/css/A.v4-shims.min.css,qver=3.0.11.pagespeed.cf.0XlImbwfpC.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='elementor-global-css' href='https://www.become.co/blog/wp-content/uploads/elementor/css/A.global.css,qver=1601610602.pagespeed.cf.tj9nfOmiiB.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='elementor-post-12624-css' href='https://www.become.co/blog/wp-content/uploads/elementor/css/A.post-12624.css,qver=1601610602.pagespeed.cf.pXCXH72egs.css' type='text/css' media='all'/>
+<style id='jquery-lazyloadxt-spinner-css-css' media='all'>.lazy-hidden,.entry img.lazy-hidden,img.thumbnail.lazy-hidden{background-color:#fff;background-image:url(/blog/wp-content/plugins/a3-lazy-load/assets/css/loading.gif.pagespeed.ce.JlgIzFRATy.gif);background-repeat:no-repeat;background-position:50% 50%}figure.wp-block-image img.lazy-hidden{min-width:150px}picture source[type="image/webp"]{display:block}</style>
+<style id='a3a3_lazy_load-css' media='all'>.clear{clear:both}.nobr{white-space:nowrap}.lazy-hidden,.entry img.lazy-hidden,img.thumbnail.lazy-hidden{background-color:#fff}</style>
+<style id='addthis_all_pages-css' media='all'>.entry-content .addthis_button,.entry-content .addthis_toolbox,.entry-header .addthis_button,.entry-header .addthis_toolbox{margin:10px 0 10px 0}.addthis_button_tweet{min-width:83px;float:left}.atwidget iframe{max-width:none}a.at-share-btn,a.at-share-btn:hover,div.addthis_native_toolbox a,div.addthis_native_toolbox a:hover,div.addthis_tool a,div.addthis_tool a:hover,div.addthis_toolbox a,div.addthis_toolbox a:hover{border:0;box-shadow:none;-webkit-box-shadow:none}div.addthis_toolbox br{display:none}</style>
+<link rel='stylesheet' id='ecs-styles-css' href='https://www.become.co/blog/wp-content/plugins/ele-custom-skin/assets/css/A.ecs-style.css,qver=3.0.0.pagespeed.cf.xzL3vrTnja.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='google-fonts-1-css' href='https://fonts.googleapis.com/css?family=Montserrat%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;ver=5.5.1' type='text/css' media='all'/>
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js?ver=1.12.4' id='jquery-js'></script>
+<script type='text/javascript' src='https://www.become.co/blog/wp-content/plugins/elementor/assets/lib/font-awesome/js/v4-shims.min.js,qver=3.0.11.pagespeed.jm.Pv1hXXq0jZ.js' id='font-awesome-4-shim-js'></script>
+<script type='text/javascript' id='ecs_ajax_load-js-extra'>//<![CDATA[
+var ecs_ajax_params={"ajaxurl":"https:\/\/www.become.co\/blog\/wp-admin\/admin-ajax.php","posts":"{\"page\":0,\"name\":\"types-of-business-level-strategies\",\"error\":\"\",\"m\":\"\",\"p\":0,\"post_parent\":\"\",\"subpost\":\"\",\"subpost_id\":\"\",\"attachment\":\"\",\"attachment_id\":0,\"pagename\":\"\",\"page_id\":0,\"second\":\"\",\"minute\":\"\",\"hour\":\"\",\"day\":0,\"monthnum\":0,\"year\":0,\"w\":0,\"category_name\":\"\",\"tag\":\"\",\"cat\":\"\",\"tag_id\":\"\",\"author\":\"\",\"author_name\":\"\",\"feed\":\"\",\"tb\":\"\",\"paged\":0,\"meta_key\":\"\",\"meta_value\":\"\",\"preview\":\"\",\"s\":\"\",\"sentence\":\"\",\"title\":\"\",\"fields\":\"\",\"menu_order\":\"\",\"embed\":\"\",\"category__in\":[],\"category__not_in\":[],\"category__and\":[],\"post__in\":[],\"post__not_in\":[],\"post_name__in\":[],\"tag__in\":[],\"tag__not_in\":[],\"tag__and\":[],\"tag_slug__in\":[],\"tag_slug__and\":[],\"post_parent__in\":[],\"post_parent__not_in\":[],\"author__in\":[],\"author__not_in\":[],\"ignore_sticky_posts\":false,\"suppress_filters\":false,\"cache_results\":true,\"update_post_term_cache\":true,\"lazy_load_term_meta\":true,\"update_post_meta_cache\":true,\"post_type\":\"\",\"posts_per_page\":9,\"nopaging\":false,\"comments_per_page\":\"50\",\"no_found_rows\":false,\"order\":\"DESC\"}"};
+//]]></script>
+<script src="https://www.become.co/blog/wp-content/plugins/ele-custom-skin/assets/js/ecs_ajax_pagination.js,qver==3.0.0+ecs.js,qver==3.0.0.pagespeed.jc.IraQr1aBiL.js"></script><script>eval(mod_pagespeed_OZxOX3RFve);</script>
+<script>eval(mod_pagespeed_LeFuRROUQq);</script>
+<link rel="https://api.w.org/" href="https://www.become.co/blog/wp-json/"/><link rel="alternate" type="application/json" href="https://www.become.co/blog/wp-json/wp/v2/posts/10229"/><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.become.co/blog/xmlrpc.php?rsd"/>
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.become.co/blog/wp-includes/wlwmanifest.xml"/> 
+<meta name="generator" content="WordPress 5.5.1"/>
+<link rel='shortlink' href='https://www.become.co/blog/?p=10229'/>
+<link rel="alternate" type="application/json+oembed" href="https://www.become.co/blog/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.become.co%2Fblog%2Ftypes-of-business-level-strategies%2F"/>
+<link rel="alternate" type="text/xml+oembed" href="https://www.become.co/blog/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.become.co%2Fblog%2Ftypes-of-business-level-strategies%2F&#038;format=xml"/>
+<style type='text/css'>.rp4wp-related-posts ul{width:100%;padding:0;margin:0;float:left}.rp4wp-related-posts ul>li{list-style:none;padding:0;margin:0;padding-bottom:20px;clear:both}.rp4wp-related-posts ul>li>p{margin:0;padding:0}.rp4wp-related-post-image{width:35%;padding-right:25px;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;float:left}</style>
+
+<style type="text/css">.site-header{background: }</style>
+
+<!-- All in one Favicon 4.7 --><link rel="icon" href="https://dav3uwijswi8g.cloudfront.net/become/webapp/img/purple-bg-favicon-48.png" type="image/png"/>
+
+
+<!-- CJT Global Block (1) - Hotjar - START -->
+<!-- Facebook Pixel Code (wp plgn) -->
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','299257493789973');fbq('track',"PageView");</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=299257493789973&ev=PageView&noscript=1"/></noscript>
+<!-- End Facebook Pixel Code  (wp plgn) -->
+<!-- CJT Global Block (1) - Hotjar - END -->
+
+<link rel="icon" href="https://www.become.co/blog/wp-content/uploads/2019/07/x48-x-48-BMP-32-bits.png.pagespeed.ic._waVudjCtH.webp" sizes="32x32"/>
+<link rel="icon" href="https://www.become.co/blog/wp-content/uploads/2019/07/x48-x-48-BMP-32-bits.png.pagespeed.ic._waVudjCtH.webp" sizes="192x192"/>
+<link rel="apple-touch-icon" href="https://www.become.co/blog/wp-content/uploads/2019/07/x48-x-48-BMP-32-bits.png.pagespeed.ic._waVudjCtH.webp"/>
+<meta name="msapplication-TileImage" content="https://www.become.co/blog/wp-content/uploads/2019/07/48-x-48-BMP-32-bits.png"/>
+    <link href="/assets/css/A.style.css,qv=1.pagespeed.cf.3XC21LqFOq.css" rel="stylesheet">
+</head>
+
+<body class="post-template-default single single-post postid-10229 single-format-standard lending-express-us resource-article-us group-blog elementor-default elementor-kit-11636 elementor-page-12624">
+    
+<!-- Nav -->
+<nav class="navbar">
+  <div class="container">
+  <div class="nav-container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+        <a href="/"><img src="https://dav3uwijswi8g.cloudfront.net/become/homepage/img/become-logo.svg" id="logo" class="navbar-brand" alt="Become"></a>
+        <img src="https://dav3uwijswi8g.cloudfront.net/lending-express-lp/img/whiteLogo.png" id="whitelogo" class="navbar-brand">
+
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+
+    <ul class="nav navbar-nav navbar-right" id="menu">
+              <li>
+                      <a data-no-change="1" href="https://www.become.co/blog/coronavirus-business-updates/" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Coronavirus Resources<b class="caret"></b></a>
+            <ul class="dropdown-menu" style="right:auto;">
+                              <li><a data-no-change="1" href="https://www.become.co/blog/coronavirus-business-updates/">News & Updates</a></li>
+                                <li><a data-no-change="1" href="/cares-act/paycheck-protection-program/">Paycheck Protection Program</a></li>
+                                <li><a data-no-change="1" href="https://www.become.co/cares-act/economic-injury-disaster-loans/">EIDL Disaster Loans</a></li>
+                            </ul>
+                      </li>
+                    <li>
+                      <a data-no-change="1" href="https://www.become.co/business-loans" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Solutions<b class="caret"></b></a>
+            <ul class="dropdown-menu" style="right:auto;">
+                              <li><a data-no-change="1" href="/business-loans/">All Funding Solutions</a></li>
+                                <li><a data-no-change="1" href="https://www.become.co/ecommerce-loans/">E-commerce Funding</a></li>
+                                <li><a data-no-change="1" href="https://www.become.co/beprofit-profit-tracker/">BeProfit - Profit Tracker</a></li>
+                                <li><a data-no-change="1" href="/loans-by-industry/">Industry Specific Loans</a></li>
+                            </ul>
+                      </li>
+                    <li>
+                      <a data-no-change="1" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Company<b class="caret"></b></a>
+            <ul class="dropdown-menu" style="right:auto;">
+                              <li><a data-no-change="1" href="https://www.become.co/blog/about-us/">About Us</a></li>
+                                <li><a data-no-change="1" href="https://www.become.co/blog/review-us/">Testimonials</a></li>
+                                <li><a data-no-change="1" href="https://www.become.co/blog/us-reviews/">Lender Reviews</a></li>
+                                <li><a data-no-change="1" href="https://www.become.co/lending-webapp/">Login</a></li>
+                                <li><a data-no-change="1" href="/careers/">Careers</a></li>
+                                <li><a data-no-change="1" href="https://www.become.co/blog/contact-us/">Contact Us</a></li>
+                            </ul>
+                      </li>
+                    <li>
+                      <a data-no-change="1" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Resources<b class="caret"></b></a>
+            <ul class="dropdown-menu" style="right:auto;">
+                              <li><a data-no-change="1" href="/blog/">Blog</a></li>
+                                <li><a data-no-change="1" href="https://www.become.co/blog/ecommerce-faq/">E-commerce Q&A</a></li>
+                                <li><a data-no-change="1" href="https://www.become.co/blog/fq/">FAQ</a></li>
+                                <li><a data-no-change="1" href="https://docs.google.com/document/d/1FTGYEpyiC03tZbPA8NNmbCKXT-18NNmUbH200ktR5AY/edit#">Press Kit</a></li>
+                            </ul>
+                      </li>
+              <li><a class="btn btn-info btn-lg start-steps" href="/apply/?k=blogapply1" data-slide-to="1" role="button">Check If You Qualify</a></li>
+  </ul>
+    </div>
+  </div>
+  </div>
+</nav>
+    <section class="text-left text-section article-text">
+        <script>var post_name='types-of-business-level-strategies';var pForEntrance='';</script>
+        <div class="container">
+            <div class="row">
+                <div id="primary" class="col-md-9">
+                                        
+<article id="post-10229" class="post-content post-10229 post type-post status-publish format-standard has-post-thumbnail hentry category-aus-resources category-business-guides category-uncategorized category-us-resources tag-business-strategy tag-growth tag-scale-up">
+
+	
+	<div title="Understand the 5 Different Types of Business-Level Strategies" style="cursor:pointer" onclick="window.location.href='https://www.become.co/blog/types-of-business-level-strategies/'" class="featured-image"><img width="1024" height="568" src="data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==" data-lazy-type="image" data-src="https://www.become.co/blog/wp-content/uploads/2019/11/xbusiness-stratiges.jpg.pagespeed.ic.cq92llfJ9X.webp" class="lazy lazy-hidden attachment-nisarg-full-width size-nisarg-full-width wp-post-image" alt="Business Level Strategies" loading="lazy" srcset="" data-srcset="https://www.become.co/blog/wp-content/uploads/2019/11/business-stratiges.jpg 1024w, https://www.become.co/blog/wp-content/uploads/2019/11/business-stratiges-300x166.jpg 300w, https://www.become.co/blog/wp-content/uploads/2019/11/business-stratiges-768x426.jpg 768w, https://www.become.co/blog/wp-content/uploads/2019/11/business-stratiges-487x270.jpg 487w" sizes="(max-width: 1024px) 100vw, 1024px"/><noscript><img width="1024" height="568" src="https://www.become.co/blog/wp-content/uploads/2019/11/xbusiness-stratiges.jpg.pagespeed.ic.cq92llfJ9X.webp" class="attachment-nisarg-full-width size-nisarg-full-width wp-post-image" alt="Business Level Strategies" loading="lazy" srcset="https://www.become.co/blog/wp-content/uploads/2019/11/xbusiness-stratiges.jpg.pagespeed.ic.cq92llfJ9X.webp 1024w, https://www.become.co/blog/wp-content/uploads/2019/11/xbusiness-stratiges-300x166.jpg.pagespeed.ic.4T6AXynCGr.webp 300w, https://www.become.co/blog/wp-content/uploads/2019/11/xbusiness-stratiges-768x426.jpg.pagespeed.ic.DKiHVrlXlg.webp 768w, https://www.become.co/blog/wp-content/uploads/2019/11/xbusiness-stratiges-487x270.jpg.pagespeed.ic.uzvMIj-jrw.webp 487w" sizes="(max-width: 1024px) 100vw, 1024px"/></noscript></div>	
+	<header class="entry-header">	
+	
+		<span class="screen-reader-text">Understand the 5 Different Types of Business-Level Strategies</span>
+		<div class="bradcrumbs">
+			<a href="/" title="Become">Become</a> › <a title="Blog" href="/blog/">Blog</a> ›
+		</div>
+					<h1 class="entry-title">Understand the 5 Different Types of Business-Level Strategies</h1>
+		
+				<div class="entry-meta">
+			<h5 class="entry-date"><i class="fa fa-calendar-o"></i> <time class="entry-date" datetime="2019-11-14T16:10:26+02:00" pubdate>November 14, 2019 </time><span class="byline"><span class="sep"></span><i class="fa fa-user"></i>
+<span class="author vcard"><a title="Annabelle Amery" href="/blog/author/annabelle/"> Annabelle Amery</a></span></span></h5>
+		</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+	
+			<div class="entry-content">
+				<div class="at-above-post addthis_tool" data-url="https://www.become.co/blog/types-of-business-level-strategies/"></div><span class="rt-reading-time" style="display: block;"><span class="rt-label rt-prefix">Reading Time: </span> <span class="rt-time">10</span> <span class="rt-label rt-postfix">minutes</span></span><span class="last-update-ind">(Last Updated On: December 12, 2019)</span>
+<p> </p>
+<p><span style="font-weight: 400;">Which kind of strategy have you adopted for your business? Is it the right one?</span></p>
+<p dir="ltr"> </p>
+<p><span style="font-weight: 400;">“If you build it, they will come” doesn’t necessarily ring true anymore when you’re just a fish in a big competitive ocean. To get an edge over your competition, a business-level strategy is needed for long-term success.</span><span style="font-weight: 400;"><br/><br/></span></p>
+<p><span style="font-weight: 400;">There are many types of business-level strategies &#8211; too many to count! Here, we’ll take you through the five main strategies so you can weigh up which is best for you, or even discover if you’ve been using the right one.</span></p>
+<p dir="ltr"> </p>
+<h2><span style="font-weight: 400;">What is a business-level strategy?</span></h2>
+<p dir="ltr"> </p>
+<p><span style="font-weight: 400;">Put simply, a business-level strategy addresses the question of how a business aims to compete in its particular industry. In other words, it’s how a business differentiates itself from its competitors.</span></p>
+<p dir="ltr"> </p>
+<p><span style="font-weight: 400;">It may now be easy to grasp what a business-level strategy</span><i><span style="font-weight: 400;"> is,</span></i><span style="font-weight: 400;"> but it gets a little more complicated when you try to figure out </span><i><span style="font-weight: 400;">which </span></i><span style="font-weight: 400;">strategy to use.</span></p>
+<p dir="ltr"> </p>
+<p><span style="font-weight: 400;">There are so many ways a business can stand out from the crowd and different business strategies that one could use &#8211; the trick lies in finding the right strategy for </span><i><span style="font-weight: 400;">your </span></i><span style="font-weight: 400;">business.</span></p>
+<p dir="ltr"> </p>
+<p><span style="font-weight: 400;"><strong>Let’s look at a simple example:</strong> Let’s say you’re a new pizza restaurant opening up in town, you’d need to figure out if you’ll be competing by say offering the lowest-priced pizza (cost leadership strategy). On the other hand, you could opt for being unique by opening the first vegan pizza in town (differentiation strategy).</span></p>
+<p dir="ltr"> </p>
+<h2><span style="font-weight: 400;">The 5 different types of business-level strategy:</span></h2>
+<p dir="ltr"> </p>
+<p><span style="font-weight: 400;">Although there are many different types of business-level strategies, we’ll take you through the five main ones. Use them wisely to find </span><i><span style="font-weight: 400;">your </span></i><span style="font-weight: 400;">business’s competitive advantage…</span></p>
+<p dir="ltr"> </p>
+<ol>
+<li style="font-weight: 400;"><b>Cost leadership &#8211; </b><span style="font-weight: 400;">competing with a wide range of businesses based on price</span></li>
+<li style="font-weight: 400;"><b>Differentiation &#8211;</b><span style="font-weight: 400;"> competing by using a product or service with entirely unique features</span></li>
+<li style="font-weight: 400;"><b>Focused differentiation &#8211;</b><span style="font-weight: 400;"> not only competing through differentiation (uniqueness of product/service) but also by  selecting a small portion of the market to focus on</span></li>
+<li style="font-weight: 400;"><b>Focused low-cost &#8211;</b><span style="font-weight: 400;"> competing not only through price but by also selecting a small portion of the market to focus on</span></li>
+<li style="font-weight: 400;"><b>Integrated low-cost differentiation &#8211;</b><span style="font-weight: 400;"> competing by using both low cost and differentiation</span></li>
+</ol>
+<p dir="ltr"> </p>
+<p><span style="font-weight: 400;">Keep reading for more detail about each of these along with business strategy examples for each!</span></p>
+<p dir="ltr"> </p>
+<h3><span style="font-weight: 400;">1. What is cost leadership?</span></h3>
+<p><span style="font-weight: 400;">A cost leadership business-level strategy is a strategy that businesses use to increase efficiency and reduce production costs to make it below that of the industry average (or competition in the area). In other words, a business charging lower prices for its products than others in the same industry &#8211; the cheapest of its kind around!</span></p>
+<p dir="ltr"> </p>
+<p><span style="font-weight: 400;">Consumers are becoming more and more aware of the choices available to them. They’re often on the lookout for how to increase their purchasing power. One way to grab their attention is to use a <a href="https://www.become.co/blog/guide-to-pricing-strategies/" target="_blank" rel="noopener noreferrer">pricing strategy</a> that no one else is using &#8211; one that customers simply can’t refuse. Using this business strategy could gain you more business due to offering a much stronger value proposition to customers.</span></p>
+<p dir="ltr"> </p>
+<p><b>How is cost leadership applied to businesses?</b></p>
+<p dir="ltr"> </p>
+<p><span style="font-weight: 400;">A business could lower the final cost of their product or service by cutting costs elsewhere in the business. For example, by having small production costs (buying on a large scale for example), few middlemen, fewer employees, etc. Such businesses can offer the same level of quality products or services compared to their competition. This allows them to offer the very same thing for a smaller buck.</span></p>
+<p><span style="font-weight: 400;"><br/></span><span style="font-weight: 400;">Wal-Mart and Costco are good cost leadership business strategy examples. Their operations are so efficient and large scale that they can get the lowest pricing on goods, enabling them to sell them for prices of a much more affordable nature than other retailers.</span></p>
+<p dir="ltr"> </p>
+<p><b>Who is cost leadership best for?</b></p>
+<p dir="ltr"> </p>
+<p><span style="font-weight: 400;">This strategy will only work if you can lower your production costs enough to still make a profit at the end of the line and outprice your competition. This means it’s often best for larger corporations as they are able to buy in larger quantities (thus lowering production costs). It may not be the best idea for Mom and Pop stores or small chains. For elite brands such as Gucci or Apple, a cost leadership strategy is out of the question and likely to backfire (read more about how<a href="https://www.become.co/blog/how-to-compete-with-big-brands/" target="_blank" rel="noopener noreferrer"> small businesses compete with big corporations</a>).</span></p>
+<p dir="ltr"> </p>
+<h4><b>Advantages</b></h4>
+<ol>
+<li style="font-weight: 400;"><b>Increase profits &#8211;</b><span style="font-weight: 400;"> by gaining more business</span></li>
+<li style="font-weight: 400;"><b>Market domination over time &#8211;</b><span style="font-weight: 400;"> unless your competitors are willing to undercut (and go into the minus) it will become impossible for competitors to survive allowing for market domination over time</span></li>
+<li style="font-weight: 400;"><b>Improves business stability &#8211;</b><span style="font-weight: 400;"> when a trade war occurs or a downturn in the economy, companies with the lowest prices and costs survive</span></li>
+</ol>
+<p dir="ltr"> </p>
+<h4><b>Risks</b></h4>
+<ol>
+<li style="font-weight: 400;"><b>Requires a large sales volume for success &#8211;</b><span style="font-weight: 400;"> it’s most successful when a large volume of sales is reached to maintain profitability</span></li>
+<li style="font-weight: 400;"><b>Requires capital that may not be available &#8211;</b><span style="font-weight: 400;"> must be able to achieve large sales volumes while scaling before running out of money. If the business is unable to reach stability before depleting capital reserves, then they could find themselves filing bankruptcy. This is why taking a <a href="https://www.become.co/business-line-of-credit/" target="_blank" rel="noopener noreferrer">Line of Credit</a> or <a href="http://www.become.co/business-loans/" target="_blank" rel="noopener noreferrer">Business Loans</a> is a good idea for all businesses to keep cash flow flowing, and allow for expansion</span></li>
+<li style="font-weight: 400;"><b>Could cause cuts in areas that harm the business &#8211;</b><span style="font-weight: 400;"> this strategy is all about cutting costs, and corners, which could mean cutting costs in critical areas such as customer support and R&amp;D (thus reducing product innovation)</span></li>
+</ol>
+<p dir="ltr"> </p>
+<h3><span style="font-weight: 400;">2. What is differentiation?</span></h3>
+<p><span style="font-weight: 400;">A differentiation strategy is all about providing a product or service with unique attributes when comparing against the competition (something that <a href="http://www.become.co" target="_blank" rel="noopener noreferrer">Become</a> has gotten very adept at doing!). It’s all about making the product or service really stand out from the crowd &#8211; one that solves a problem that no one else has. It requires innovation and out of the box thinking. To execute the differentiation strategy, you’d need to conduct extensive market research to find a gap in the market that needs filling, or by improving an existing product or service.</span></p>
+<p dir="ltr"> </p>
+<p><b>How differentiation is applied to businesses?</b></p>
+<p dir="ltr"> </p>
+<p><span style="font-weight: 400;">Differentiation is applied to businesses by simply taking a product or business and making it better or different than the competition. There are many </span><a href="https://blog.hubspot.com/insiders/branding-differentiation" target="_blank" rel="noopener noreferrer"><span style="font-weight: 400;">examples of differentiation</span></a><span style="font-weight: 400;"> in the real world &#8211; take the cosmetics brand LUSH for example. They are advocates of handmade and ethical buying, making them stand out from their competition (Sephora and Etsy). Their shops offer quality customer service with a one-of-a-kind retail experience where customers can touch, try and feel the products in the store.</span></p>
+<p dir="ltr"> </p>
+<p><b>Who is differentiation best for?</b></p>
+<p dir="ltr"> </p>
+<p><span style="font-weight: 400;">Differentiation is one of the main strategies that businesses use to compete for customers in their industry. Just about any industry or business could use this technique. The trick is to find the pain-points of your competitors’ customers and solve them.</span></p>
+<p dir="ltr"> </p>
+<h4><b>Advantages</b></h4>
+<ol>
+<li style="font-weight: 400;"><b>Turn clients into fans by creating brand loyalty &#8211;</b><span style="font-weight: 400;"> the right <a href="https://www.become.co/blog/inspiring-examples-of-small-business-branding/" target="_blank" rel="noopener noreferrer">small business branding strategy</a> can make all the difference. If people love what you’re doing, they will share it. This shows when taking the LUSH example above &#8211; they have a huge fan base!</span></li>
+<li style="font-weight: 400;"><b>Marketing efforts become easy &#8211; </b><span style="font-weight: 400;">when you have a unique selling point (USP), it makes it much easier to market your product or service</span></li>
+<li style="font-weight: 400;"><b>If you create a product in high demand</b><span style="font-weight: 400;">, you can price it higher!</span></li>
+</ol>
+<p dir="ltr"> </p>
+<h4><b>Risks</b></h4>
+<ol>
+<li style="font-weight: 400;"><b>High cost &#8211;</b><span style="font-weight: 400;"> providing a distinct quality could make for high research and development costs. New product elements could increase the final production costs</span></li>
+<li style="font-weight: 400;"><b>Too different could be bad &#8211;</b><span style="font-weight: 400;"> if a product is too unfamiliar or complex to the consumer, they may shy away</span></li>
+<li style="font-weight: 400;"><b>Excludes some buyers &#8211;</b><span style="font-weight: 400;"> you can’t please everyone and by differentiating to a very small niche &#8211; if said niche isn’t large enough you may not become profitable</span></li>
+</ol>
+<p dir="ltr"> </p>
+<p dir="ltr"><img loading="lazy" class="lazy lazy-hidden aligncenter size-full wp-image-3597" src="data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==" data-lazy-type="image" data-src="https://www.become.co/blog/wp-content/uploads/2018/11/xiStock-929534198-1.jpg.pagespeed.ic.gAszlc3XP-.webp" alt="Business Level Strategies" width="1254" height="837" srcset="" data-srcset="https://www.become.co/blog/wp-content/uploads/2018/11/iStock-929534198-1.jpg 1254w, https://www.become.co/blog/wp-content/uploads/2018/11/iStock-929534198-1-300x200.jpg 300w, https://www.become.co/blog/wp-content/uploads/2018/11/iStock-929534198-1-768x513.jpg 768w, https://www.become.co/blog/wp-content/uploads/2018/11/iStock-929534198-1-1200x801.jpg 1200w, https://www.become.co/blog/wp-content/uploads/2018/11/iStock-929534198-1-405x270.jpg 405w, https://www.become.co/blog/wp-content/uploads/2018/11/iStock-929534198-1-1024x683.jpg 1024w" sizes="(max-width: 1254px) 100vw, 1254px"/><noscript><img loading="lazy" class="aligncenter size-full wp-image-3597" src="https://www.become.co/blog/wp-content/uploads/2018/11/xiStock-929534198-1.jpg.pagespeed.ic.gAszlc3XP-.webp" alt="Business Level Strategies" width="1254" height="837" srcset="https://www.become.co/blog/wp-content/uploads/2018/11/xiStock-929534198-1.jpg.pagespeed.ic.gAszlc3XP-.webp 1254w, https://www.become.co/blog/wp-content/uploads/2018/11/xiStock-929534198-1-300x200.jpg.pagespeed.ic.cyeysZfmau.webp 300w, https://www.become.co/blog/wp-content/uploads/2018/11/xiStock-929534198-1-768x513.jpg.pagespeed.ic.ob9SVQ53XH.webp 768w, https://www.become.co/blog/wp-content/uploads/2018/11/xiStock-929534198-1-1200x801.jpg.pagespeed.ic.nOugx5uCeT.webp 1200w, https://www.become.co/blog/wp-content/uploads/2018/11/xiStock-929534198-1-405x270.jpg.pagespeed.ic.vR8BurrbIU.webp 405w, https://www.become.co/blog/wp-content/uploads/2018/11/xiStock-929534198-1-1024x683.jpg.pagespeed.ic.NqpfAwz4EL.webp 1024w" sizes="(max-width: 1254px) 100vw, 1254px"/></noscript></p>
+<p dir="ltr"> </p>
+<h3><span style="font-weight: 400;">3. What is focused differentiation?</span></h3>
+<p><span style="font-weight: 400;">A focused differentiation business strategy involves targeting a specific or small group of customers with differentiated products. This means your product or service should have unique features that meet the demands of a niche market.</span></p>
+<p dir="ltr"> </p>
+<p><b>How is focused differentiation applied to businesses?</b></p>
+<p dir="ltr"> </p>
+<p><span style="font-weight: 400;">Niche or “narrow” markets can be defined in many ways, it could, for example, mean focusing on a particular sales channel such as only selling online. It could also be in terms of a demographic group, think of a hotel that offers many activities for children (or without). Both these hotels have focused their differentiation to a particular market &#8211; one with children, and one that is dedicated more to romantic couples looking for peace and quiet.</span></p>
+<p dir="ltr"> </p>
+<p><span style="font-weight: 400;">Consumers seeking out a unique product such as a high-end camera, or environmentally safe nail polish (you name it) are willing to pay premium prices.</span></p>
+<p dir="ltr"> </p>
+<p><b>Who is focused differentiation best for?</b></p>
+<p dir="ltr"> </p>
+<p><span style="font-weight: 400;">In markets where product comparison knowledge is very important (such as camping equipment), new stores could find it difficult to compete with firms that are following a focused differentiation business strategy. This type of strategy is good for businesses that have found a niche they’d like to specialize their products or services in that also has sufficient demand. Just make sure to do plenty of market research before you dive in.</span></p>
+<p dir="ltr"> </p>
+<h4><strong>Advantages</strong></h4>
+<ol>
+<li style="font-weight: 400;"><b>Can charge very high prices &#8211;</b><span style="font-weight: 400;"> even higher than those simply following the differentiation strategy, as you are offering a unique experience/product/service</span></li>
+<li style="font-weight: 400;"><b>Competition is limited &#8211;</b><span style="font-weight: 400;"> if you’ve specialized in a very niche area, to a niche audience, you’re likely to have limited competition</span></li>
+<li style="font-weight: 400;"><b>Build customer loyalty &#8211; </b><span style="font-weight: 400;">if you’re selling, for example, plastic-free eco-friendly shampoo bars, you’re going to target a very specific individual that despite higher prices, will continue to return to you for shampoo due to the health benefits to hair and the environment, thus building strong customer loyalty</span></li>
+</ol>
+<p dir="ltr"> </p>
+<h4><span style="font-weight: 400;"><strong>Risks</strong> </span></h4>
+<ol>
+<li style="font-weight: 400;"><b>Limited demand</b><span style="font-weight: 400;"> could limit growth capabilities </span></li>
+<li style="font-weight: 400;"><b>Your niche could simply disappear</b><span style="font-weight: 400;"> or be outcompeted by larger competitors (think about gun stores that went under when WalMart and Wholesale Sports starting selling firearms)</span></li>
+<li style="font-weight: 400;"><b>Could be outcompeted</b> <b>by businesses adopting an even narrower focus &#8211; </b><span style="font-weight: 400;">think about a clothes store that sells winter apparel vs a new store that specializes in gloves. A consumer that needs gloves specifically may choose the glove store as they can receive more choice and specific guidance there</span></li>
+</ol>
+<p dir="ltr"> </p>
+<h3><span style="font-weight: 400;">4. What is focused low-cost?</span></h3>
+<p><span style="font-weight: 400;">A focused low-cost business strategy is very similar to a focused strategy &#8211; one that focuses on a small niche of customers but with one small difference, you guessed it &#8211; it’s lower cost!</span></p>
+<p dir="ltr"> </p>
+<p><span style="font-weight: 400;">If your business doesn’t appeal to a larger market, then it’s best to focus on a niche. You may not be able to have low prices for all of your products and/or services, you can try to be the lowest-cost provider in the market for that specific niche. This could help your business to stand out against its other competitors.</span></p>
+<p dir="ltr"> </p>
+<p><b>How is focused low-cost applied to businesses?</b></p>
+<p dir="ltr"> </p>
+<p><span style="font-weight: 400;">Rather than having low prices all around, you’ll pick and choose which products have ‘normal’ prices and one specific one or two that’s much lower.</span></p>
+<p dir="ltr"> </p>
+<p><span style="font-weight: 400;">Businesses will not only compete on price but also a very select small segment of the market, one example, is a company that sells to the government alone.</span></p>
+<p dir="ltr"> </p>
+<p><b>Who is focused low-cost best for?</b></p>
+<p dir="ltr"> </p>
+<p><span style="font-weight: 400;">This strategy can be effective when there’s competition but competitors are not strong or if a small or specific segment of customers are capable of creating a remarkable difference in the revenues.</span></p>
+<p dir="ltr"> </p>
+<h4><b>Advantages</b></h4>
+<ol>
+<li style="font-weight: 400;"><b>Low cost</b></li>
+<li style="font-weight: 400;"><b>Draw in a narrow market segment</b></li>
+<li style="font-weight: 400;"><b>Increase brand affinity &#8211; </b><span style="font-weight: 400;">from having a specialized product</span></li>
+</ol>
+<p dir="ltr"> </p>
+<h4><b>Risks</b></h4>
+<ol>
+<li style="font-weight: 400;"><b>Could be too specific for the market &#8211;</b><span style="font-weight: 400;"> make sure there is enough demand for your product/service</span></li>
+<li style="font-weight: 400;"><b>Future growth could be limited &#8211;</b><span style="font-weight: 400;"> if you specialize too much, then future expansion could be tough</span></li>
+</ol>
+<p dir="ltr"> </p>
+<h3><span style="font-weight: 400;">5. </span><span style="font-weight: 400;">What is integrated low-cost/differentiation strategy?</span></h3>
+<p><span style="font-weight: 400;">An integrated low-cost/differentiation strategy is where a business has differentiated products that are offered at a lower cost. This new hybrid business strategy could be on it’s way to becoming increasingly popular as global competition increases. Compared to companies relying on a single strategy, those that integrate two may be able to position themselves to adapt much quicker to environmental changes.</span></p>
+<p dir="ltr"> </p>
+<p><b>How is integrated low-cost applied to businesses?</b></p>
+<p dir="ltr"> </p>
+<p><span style="font-weight: 400;">Products and services from businesses following this model aren’t as differentiated as those following the differentiation strategy, nor are costs as low as the low-cost leaders. Using this “midway” strategy means that businesses must be able to consistently adapt by reducing costs while adding unique (differentiated) features to keep the customer happy.</span></p>
+<p dir="ltr"> </p>
+<p><span style="font-weight: 400;">Hybrid business strategy examples include Air Arabia. The clever flight company offers quality service when it comes to comfort but offer an economic fare by simply cutting back on premium in-flight services. Another great example is IKEA who both differentiate in design and offer low-cost products. It seems, just competing on price is no longer enough!</span></p>
+<p dir="ltr"> </p>
+<p><b>Who is it best for?</b></p>
+<p dir="ltr"> </p>
+<p><span style="font-weight: 400;">This hybrid business-level strategy is good for businesses that have a market niche where the buyer’s needs and preferences are different from the rest of the current market. If you want your business to really stand out and have the manpower to focus on both differentiation, and low-cost production to keep the price down &#8211; then this strategy could be best for your business.</span></p>
+<p dir="ltr"> </p>
+<h4><b>Advantages</b></h4>
+<ol>
+<li style="font-weight: 400;"><b>Great for gaining customer loyalty &#8211;</b><span style="font-weight: 400;"> there’s a huge value for customers both in the product and price</span></li>
+<li style="font-weight: 400;"><b>Adaptable business model &#8211;</b><span style="font-weight: 400;"> can easily adapt to environmental changes</span></li>
+<li style="font-weight: 400;"><b>Your business will have both unique features and be relatively low-cost</b></li>
+</ol>
+<p dir="ltr"> </p>
+<h4><b>Risks</b></h4>
+<ol>
+<li style="font-weight: 400;"><b>Involves compromise &#8211;</b><span style="font-weight: 400;"> you’ll neither be the lowest cost nor the most differentiated company</span></li>
+<li style="font-weight: 400;"><b>Risk of becoming “stuck in the middle” &#8211; </b><span style="font-weight: 400;">the company could lack the expertise that comes with directly following either a cost leadership or differentiated business strategy</span></li>
+<li style="font-weight: 400;"><b>Multi-tasking &#8211; </b><span style="font-weight: 400;">the business needs to be capable of simultaneously focusing on reducing costs and adding unique features that customers value and are willing to pay a slightly higher price for</span></li>
+</ol>
+<p dir="ltr"> </p>
+<h2><span style="font-weight: 400;">How to choose the right business-level strategy for your company</span></h2>
+<p dir="ltr"> </p>
+<p><span style="font-weight: 400;">You may now be scratching your head and wondering which of these business-level strategy examples is best for your business. Here we’ll give you a few questions you should ask yourself when picking your strategy.</span></p>
+<p dir="ltr"> </p>
+<p><span style="font-weight: 400;">1. Is your company’s market broad or narrow and who are your customers?</span><span style="font-weight: 400;"><br/></span><b>Broad =</b><span style="font-weight: 400;"> a wide market</span><span style="font-weight: 400;"><br/></span><b>Narrow =</b><span style="font-weight: 400;"> limited to one or a few market segments</span></p>
+<p dir="ltr"> </p>
+<p><span style="font-weight: 400;">2. Figure out whether the competitive position focuses on the lowest total cost or if it focuses on product differentiation.</span><span style="font-weight: 400;"><br/></span><b>Low cost =</b><span style="font-weight: 400;"> your company works to achieve the lowest costs in production and distribution</span><span style="font-weight: 400;"><br/></span><b>Product or service leadership =</b><span style="font-weight: 400;"> your company is putting a focus on a product/service that’s unique from the competition</span></p>
+<p dir="ltr"> </p>
+<p>3.<b> Put it all together &#8211; </b><span style="font-weight: 400;">once you have a firm idea of your business’s competition, audience and competitive position, you should be able to see where you fit and begin developing your strategy</span></p>
+<p dir="ltr"> </p>
+<h2><span style="font-weight: 400;">How to develop and implement a business-level strategy</span></h2>
+<p dir="ltr"> </p>
+<p><span style="font-weight: 400;">Once you’ve chosen which business-level strategy you feel will work best for your business it’s time to create your business’s goals (including your company’s vision) and </span><span style="font-weight: 400;">pricing strategy</span><span style="font-weight: 400;">. Once you’ve got that down, a strategic plan can be created outlining how to achieve them. Make sure to check in on your progress to make sure you are really </span><a href="https://www.become.co/blog/scaling-your-business/" target="_blank" rel="noopener noreferrer"><span style="font-weight: 400;">scaling your business</span></a><span style="font-weight: 400;">.</span></p>
+<p dir="ltr"> </p>
+<h2><span style="font-weight: 400;">Final thoughts </span></h2>
+<p dir="ltr"> </p>
+<p><span style="font-weight: 400;">There are so many different business strategies, here we outlined the top 5. To choose and implement the correct one, you’ll need to put yourself in your customer’s shoes, look at the market and think deeply about the core foundations of your business. With this in mind, developing your strategy should become much, much easier.</span></p>
+<p dir="ltr"> </p>
+<p><span style="font-weight: 400;">Good strategic planning can seriously impact the outcome and profits of your business no matter how big or small.</span></p>
+<p> </p>
+<p><a href="http://www.become.co/apply/?k=blogbanner" target="_blank" rel="noopener noreferrer"><img loading="lazy" class="lazy lazy-hidden aligncenter wp-image-10309 size-full" src="data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==" data-lazy-type="image" data-src="https://www.become.co/blog/wp-content/uploads/2019/11/xblog-bannewr-2.png.pagespeed.ic.R9YjCO-PfJ.webp" alt="Business Level Strategies" width="842" height="270" srcset="" data-srcset="https://www.become.co/blog/wp-content/uploads/2019/11/blog-bannewr-2.png 842w, https://www.become.co/blog/wp-content/uploads/2019/11/blog-bannewr-2-300x96.png 300w, https://www.become.co/blog/wp-content/uploads/2019/11/blog-bannewr-2-768x246.png 768w, https://www.become.co/blog/wp-content/uploads/2019/11/blog-bannewr-2-604x194.png 604w" sizes="(max-width: 842px) 100vw, 842px"/><noscript><img loading="lazy" class="aligncenter wp-image-10309 size-full" src="https://www.become.co/blog/wp-content/uploads/2019/11/xblog-bannewr-2.png.pagespeed.ic.R9YjCO-PfJ.webp" alt="Business Level Strategies" width="842" height="270" srcset="https://www.become.co/blog/wp-content/uploads/2019/11/xblog-bannewr-2.png.pagespeed.ic.R9YjCO-PfJ.webp 842w, https://www.become.co/blog/wp-content/uploads/2019/11/xblog-bannewr-2-300x96.png.pagespeed.ic.vTOiAX88ep.webp 300w, https://www.become.co/blog/wp-content/uploads/2019/11/xblog-bannewr-2-768x246.png.pagespeed.ic.PGrC47FTiS.webp 768w, https://www.become.co/blog/wp-content/uploads/2019/11/xblog-bannewr-2-604x194.png.pagespeed.ic.WP_kmGRxi1.webp 604w" sizes="(max-width: 842px) 100vw, 842px"/></noscript></a></p>
+<div style="font-size:12px;font-style:italic;margin-top:12px;">Disclaimer: The information contained in this article is provided for informational purposes only, should not be construed as legal advice on any subject matter and should not be relied upon as such. The author accepts no responsibility for any consequences whatsoever arising from the use of such information.</div><!-- AddThis Advanced Settings above via filter on the_content --><!-- AddThis Advanced Settings below via filter on the_content --><!-- AddThis Advanced Settings generic via filter on the_content --><!-- AddThis Share Buttons above via filter on the_content --><!-- AddThis Share Buttons below via filter on the_content --><div class="at-below-post addthis_tool" data-url="https://www.become.co/blog/types-of-business-level-strategies/"></div><!-- AddThis Share Buttons generic via filter on the_content --><div class='rp4wp-related-posts'>
+<h3>Related Posts</h3>
+<ul>
+<li><div class='rp4wp-related-post-content'>
+<a href='https://www.become.co/blog/how-does-business-age-affect-business-loan-eligibility/'>How Does Business Age Affect Business Loan Eligibility?</a><p>What came first the job or the experience? This well-known chicken and egg scenario is&hellip;</p></div>
+</li>
+<li><div class='rp4wp-related-post-content'>
+<a href='https://www.become.co/blog/busted-4-myths-about-small-business-loans-2/'>Busted: 4 Myths About Small Business Loans</a><p>Getting a small business loan can be one of the more challenging aspects of running a&hellip;</p></div>
+</li>
+<li><div class='rp4wp-related-post-content'>
+<a href='https://www.become.co/blog/this-is-what-australian-business-owners-say-about-getting-a-business-loan/'>This Is What Australian Business Owners Say About Getting a Business Loan</a><p>At Lending Express, we’ve helped thousands of Australian businesses get loans for their businesses, to&hellip;</p></div>
+</li>
+<li><div class='rp4wp-related-post-content'>
+<a href='https://www.become.co/blog/how-to-grow-your-small-business-in-2019/'>How to Grow Your Small Business in 2020</a><p>Just because you’re running a small business, doesn’t mean it has to stay that way.&hellip;</p></div>
+</li>
+<li><div class='rp4wp-related-post-content'>
+<a href='https://www.become.co/blog/reasons-to-get-a-business-loan/'>8 Reasons to Get a Business  Loan</a><p>  As a small business owner, even a whisper that you’re considering taking out an&hellip;</p></div>
+</li>
+</ul>
+</div>
+
+							</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<hr><div class="row"><div class="col-md-6 cattegories"><span class="cat-links"><i class="fa fa-folder-open"></i>
+		 <a href="https://www.become.co/blog/aus-resources/" rel="category tag">AUS Resources</a>, <a href="https://www.become.co/blog/business-guides/" rel="category tag">Business Loan Guides</a>, <a href="https://www.become.co/blog/uncategorized/" rel="category tag">Uncategorized</a>, <a href="https://www.become.co/blog/us-resources/" rel="category tag">US Resources</a></span></div><div class="col-md-6 tags"><span class="tags-links"><i class="fa fa-tags"></i> <a href="https://www.become.co/blog/tag/business-strategy/" rel="tag">business strategy</a>, <a href="https://www.become.co/blog/tag/growth/" rel="tag">growth</a>, <a href="https://www.become.co/blog/tag/scale-up/" rel="tag">scale up</a></span></div></div>	</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+                                    </div>
+
+                                    <div id="secondary" class="col-md-3 sidebar">
+                            <li id="text-9" class="widget widget_text">			<div class="textwidget"><div class="textwidget" style="background:url(https://www.become.co/blog/wp-content/uploads/2020/03/xheader-lines-bg1.png.pagespeed.ic.5HSSh8kZQJ.webp);padding:14px 12px;text-align:center;border-radius:5px"></p>
+<div data-id="5da10c8" data-element_type="widget" data-widget_type="text-editor.default">
+<p><a href="/blog/coronavirus-business-updates/"><img loading="lazy" class="lazy lazy-hidden aligncenter lazy-loaded" src="data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==" data-lazy-type="image" data-src="https://dav3uwijswi8g.cloudfront.net/become/homepage/img/covid19-white.svg" data-lazy-type="image" data-src="https://dav3uwijswi8g.cloudfront.net/become/homepage/img/covid19-white.svg" alt="Covid19 - Coronavirus" width="205" height="86" style="
+    margin-bottom: 0px;
+"><noscript><img loading="lazy" class="aligncenter lazy-loaded" src="https://dav3uwijswi8g.cloudfront.net/become/homepage/img/covid19-white.svg" data-lazy-type="image" data-src="https://dav3uwijswi8g.cloudfront.net/become/homepage/img/covid19-white.svg" alt="Covid19 - Coronavirus" width="205" height="86" style="
+    margin-bottom: 0px;
+"></noscript><noscript><img loading="lazy" class="lazy lazy-hidden aligncenter lazy-loaded" src="data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==" data-lazy-type="image" data-src="https://dav3uwijswi8g.cloudfront.net/become/homepage/img/covid19-white.svg" alt="Covid19 - Coronavirus" width="205" height="86" data-lazy-type="image" data-src="https://dav3uwijswi8g.cloudfront.net/become/homepage/img/covid19-white.svg"/><noscript><img loading="lazy" class="aligncenter lazy-loaded" src="https://dav3uwijswi8g.cloudfront.net/become/homepage/img/covid19-white.svg" alt="Covid19 - Coronavirus" width="205" height="86" data-lazy-type="image" data-src="https://dav3uwijswi8g.cloudfront.net/become/homepage/img/covid19-white.svg"/></noscript></noscript></a>
+</div>
+<div data-id="" data-element_type="widget" data-widget_type="">
+</div>
+</div>
+</div>
+		</li>
+<li id="text-5" class="widget widget_text">			<div class="textwidget"><div class="join-to-community">		<div data-elementor-type="page" data-elementor-id="13161" class="elementor elementor-13161" data-elementor-settings="[]">
+						<div class="elementor-inner">
+							<div class="elementor-section-wrap">
+							<section class="elementor-section elementor-top-section elementor-element elementor-element-47b493ac elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-invisible" data-id="47b493ac" data-element_type="section" data-settings="{&quot;animation&quot;:&quot;slideInUp&quot;}">
+							<div class="elementor-background-overlay"></div>
+							<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-e08804f" data-id="e08804f" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-611410ff elementor-widget elementor-widget-heading" data-id="611410ff" data-element_type="widget" data-settings="{&quot;motion_fx_motion_fx_scrolling&quot;:&quot;yes&quot;,&quot;motion_fx_devices&quot;:[&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile&quot;]}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h6 class="elementor-heading-title elementor-size-default"><a href="/apply/" target="_blank" rel="noopener noreferrer">Business Funding</a></h6>		</div>
+				</div>
+				<div class="elementor-element elementor-element-5d06c0e0 elementor-widget elementor-widget-text-editor" data-id="5d06c0e0" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p><span style="color: #ffffff;">See if you qualify</span></p></div>
+				</div>
+				</div>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-746550d3 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="746550d3" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-52823c87" data-id="52823c87" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-5a9b9ed3 elementor-button-success elementor-align-justify elementor-widget elementor-widget-button" data-id="5a9b9ed3" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a href="/apply/" target="_blank" class="elementor-button-link elementor-button elementor-size-md elementor-animation-grow" role="button" rel="noopener noreferrer">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-text">Apply Now</span>
+		</span>
+					</a>
+		</div>
+				</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-84e34d4" data-id="84e34d4" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-2f656ace elementor-hidden-desktop elementor-hidden-tablet elementor-widget elementor-widget-image" data-id="2f656ace" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img class="lazy lazy-hidden" src="data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==" data-lazy-type="image" data-src="https://www.become.co/blog/wp-content/uploads/elementor/thumbs/xb-logo-onbyun6h7zu2tzjtsqvf2wjfwn24440kou3u4nfxts.png.pagespeed.ic.-sVyJuntCy.webp" title="b-logo" alt="b-logo"/><noscript><img src="https://www.become.co/blog/wp-content/uploads/elementor/thumbs/xb-logo-onbyun6h7zu2tzjtsqvf2wjfwn24440kou3u4nfxts.png.pagespeed.ic.-sVyJuntCy.webp" title="b-logo" alt="b-logo"/></noscript>											</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-5200d00d elementor-hidden-phone elementor-widget elementor-widget-image" data-id="5200d00d" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image">
+										<img width="39" height="52" src="data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==" data-lazy-type="image" data-src="https://www.become.co/blog/wp-content/uploads/2020/03/xb-logo.png.pagespeed.ic.b3sLB0I7CH.webp" class="lazy lazy-hidden attachment-thumbnail size-thumbnail" alt="" loading="lazy"/><noscript><img width="39" height="52" src="https://www.become.co/blog/wp-content/uploads/2020/03/xb-logo.png.pagespeed.ic.b3sLB0I7CH.webp" class="attachment-thumbnail size-thumbnail" alt="" loading="lazy"/></noscript>											</div>
+				</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+						</div>
+						</div>
+					</div>
+		</div>
+</div>
+		</li>
+                    </div>
+                    
+
+            </div>
+        </div>
+    </section>
+
+
+		<!-- Modal -->
+		
+
+		<div id="article-pop" class="modal fade material-modal text-center" role="dialog">
+			<div class="modal-dialog">
+				<!-- Modal content-->
+				<div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <img src="https://www.become.co/wp/wp-content/uploads/2017/11/money-1.png" alt="money" style=" width: 118px; margin: 10px; ">
+                    </div>
+					<div class="modal-body">
+						<span class="h1">
+							Interested in a business loan?
+						</span>
+					</div>
+					<div class="modal-footer">
+						<button onclick="window.location.href='/'" type="button" class="btn btn-success">Check if you qualify</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div id="pre-qualified-pop" class="modal fade material-modal text-center" role="dialog">
+			<div class="modal-dialog modal-lg">
+				<!-- Modal content-->
+				<div class="modal-content">
+                    <div class="modal-header">
+
+                        <h2 class="step1">To get access to the full article<br>answer 2 quick questions:</h2>
+                        <h2 class="step2 hide">Get the full article right now!</h2>
+                    </div>
+					<div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-10 col-md-offset-1">
+                                <div class="step1">
+                                    <div class="form-group">
+                                        <label>What is your business monthly turnover <i data-toggle="tooltip" data-placement="bottom" class="fa fa-fw fa-question-circle" title="The average monthly turnover over past 6 months."></i></label>
+                                        <select class="form-control" name="monthly_turnover">
+                                            <option value="">- Select business monthly turnover -</option>
+                                            <option value="500">Less than 1,000$</option>
+                                            <option value="2000">$1,000-$3,000</option>
+                                            <option value="5500">$3,000-$8,000</option>
+                                            <option value="10500">$8,000-$13,000</option>
+                                            <option value="16500">$13,000-$20,000</option>
+                                            <option value="25000">$20,000-$30,000</option>
+                                            <option value="45000">$30,000-$50,000</option>
+                                            <option value="75000">$50,000-$100,000</option>
+                                            <option value="100000">$105,000+</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Business operating time <i data-toggle="tooltip" data-placement="bottom" class="fa fa-fw fa-question-circle" title="The period of time your business has been operating since its establishment until now."></i></label>
+                                        <select class="form-control" id="business_months_number" name="business_months_number">
+                                            <option value="">- Select operating time -</option>
+                                            <option value="0">I currently don't own a business</option>
+                                            <option value="2">Less than 3 Months</option>
+                                            <option value="4">3 - 5 Months</option>
+                                            <option value="9">6 - 12 Months </option>
+                                            <option value="18">1 - 2 Years</option>
+                                            <option value="48">3 - 5 Years</option>
+                                            <option value="60">More than 5 Years </option>
+                                        </select>
+                                    </div>
+                                    <div style="color:#333;font-size:14px;">
+                                        <i class="fa fa-fw fa-lock"></i> Your response is anonymous and secure
+                                    </div>
+                                </div>
+                                <div class="step2 hide">
+									<label>Just fill in your email address</label>
+                                    <div class="form-group inner-addon right-addon"><i class="fa fa-envelope"></i>
+                                        <input type="email" class="form-control" id="popup_email_input" name="popup_email_input" placeholder="E-mail"/>
+                                        <br/>
+                                                                                </div>
+                                </div>
+                            </div>
+                        </div>
+					</div>
+					<div class="modal-footer">
+
+                        <div class="err1" style="color:red;margin:0 0 10px 0;text-align:center;font-size:14px;font-weight:bold;display:none;">
+                            Please select both monthly turnover and operating time.
+                        </div>
+                        <div class="err2" style="color:red;margin:0 0 10px 0;text-align:center;font-size:14px;font-weight:bold;display:none;">
+                            Please insert valid e-mail.
+                        </div>
+                        <div class="err3" style="color:red;margin:0 0 10px 0;text-align:center;font-size:14px;font-weight:bold;display:none;">
+                            Sorry, we can't send you the article yet.</br>
+                            In order to receive the full article please mark the checkbox.
+                        </div>
+                        <button type="button" class="btn btn-success pre-qualified-button">Submit information</button>
+                        <button type="button" class="btn btn-success pre-qualified-button-final" style="display:none;">Get Full Article </button>
+                                                    <small class="us-email-disclaimer" style="display:none;display: block;font-size: 11px;padding-top: 12px;">By submitting my email address, I agree to receive the full article and marketing materials from Become.</small>
+                            
+                        <div class="done"></div>
+                        <div class="loading" style="color:#333;margin:0 0 10px 0;text-align:center;font-size:14px;font-weight:bold;display:none">
+                            <img src="https://cdnjs.cloudflare.com/ajax/libs/galleriffic/2.0.1/css/loader.gif" style="width:20px;height:20px;position:relative;top:5px;"> Please wait...
+                        </div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+        <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"],function(L){L.start({"baseUrl":"mc.us13.list-manage.com","uuid":"93a8b41d410381261d33a123e","lid":"d934cf44a3","uniqueMethods":true})})</script>
+    <div class="footer text-center">
+    <div class="container">
+
+    </div>
+</div>
+
+
+
+
+    <!-- Hotjar Tracking Code for https://www.become.co -->
+        <script>(function(h,o,t,j,a,r){h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};h._hjSettings={hjid:848013,hjsv:6};a=o.getElementsByTagName('head')[0];r=o.createElement('script');r.async=1;r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;a.appendChild(r);})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');</script>
+       <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-52149021-12','auto');ga('send','pageview');</script>
+       <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LJ8JH1V969"></script>
+        <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-LJ8JH1V969');</script>
+       <!-- function -->
+            <input type="hidden" id="product_ID" value="5"/>
+                    <!-- Google Code for Remarketing Tag wp funcs -->
+            <script type="text/javascript">//<![CDATA[
+var google_conversion_id=828884948;var google_custom_params=window.google_tag_params;var google_remarketing_only=true;
+//]]></script>
+            <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+            <noscript>
+            <div style="display:inline;">
+            <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/828884948/?guid=ON&amp;script=0"/>
+            </div>
+            </noscript>
+                    <script>var templateDir="https://www.become.co/blog/wp-content/themes/nisarg";document.addEventListener('wpcf7submit',function(event){var inputs=event.detail.inputs;var post_ID=event.detail.containerPostId;var data_arr={};if(post_ID==2544){data_arr['product_ID']=3;}else{data_arr['product_ID']=5;}for(var i=0;i<inputs.length;i++){data_arr[inputs[i].name]=inputs[i].value;}$.ajax({url:'/blog/wp-content/themes/nisarg-child/ajax/save-contact.php',dataType:"json",method:'POST',data:data_arr,success:function(data){}});},false);</script>
+        <script type="text/javascript">let cust_login=document.getElementById("loginform");if(cust_login!==null){var recaptcha_script=document.createElement('script');recaptcha_script.setAttribute('src','https://www.google.com/recaptcha/api.js');document.head.appendChild(recaptcha_script);}</script>
+        <script data-cfasync="false" type="text/javascript">if(window.addthis_product===undefined){window.addthis_product="wpp";}if(window.wp_product_version===undefined){window.wp_product_version="wpp-6.2.6";}if(window.addthis_share===undefined){window.addthis_share={};}if(window.addthis_config===undefined){window.addthis_config={"data_track_clickback":true,"ui_language":"en","ui_atversion":"300"};}if(window.addthis_plugin_info===undefined){window.addthis_plugin_info={"info_status":"enabled","cms_name":"WordPress","plugin_name":"Share Buttons by AddThis","plugin_version":"6.2.6","plugin_mode":"AddThis","anonymous_profile_id":"wp-adbfd3dc116ab8af4996b5ee25bcbb50","page_info":{"template":"posts","post_type":""},"sharing_enabled_on_post_via_metabox":false};}(function(){var first_load_interval_id=setInterval(function(){if(typeof window.addthis!=='undefined'){window.clearInterval(first_load_interval_id);if(typeof window.addthis_layers!=='undefined'&&Object.getOwnPropertyNames(window.addthis_layers).length>0){window.addthis.layers(window.addthis_layers);}if(Array.isArray(window.addthis_layers_tools)){for(i=0;i<window.addthis_layers_tools.length;i++){window.addthis.layers(window.addthis_layers_tools[i]);}}}},1000)}());</script><link rel='stylesheet' id='elementor-post-13161-css' href='https://www.become.co/blog/wp-content/uploads/elementor/css/A.post-13161.css,qver=1601610603.pagespeed.cf.-65QWOkztJ.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='quick-nav-css' href='https://www.become.co/blog/wp-content/themes/nisarg-child/assets/css/quick_jump_nav.css?ver=1603102335' type='text/css' media='all'/>
+<script type='text/javascript' src='https://www.become.co/blog/wp-content/plugins/news-ticker-for-elementor//assets/js/breaking-news-ticker.min.js,qver=1.0.0.pagespeed.jm.Mw2NE1HHtI.js' id='wb-nt-library-js'></script>
+<script type='text/javascript' id='wb-nt-main-js'>//<![CDATA[
+'use strict';(function($){jQuery(window).load(function(){jQuery(window).trigger('resize');});jQuery(window).on('elementor/frontend/init',function(){elementorFrontend.hooks.addAction('frontend/element_ready/wb-news-ticker.default',function($scope,$){$scope.find('.wb-breaking-news-ticker').breakingNews();});});})(jQuery);
+//]]></script>
+<script type='text/javascript' id='contact-form-7-js-extra'>//<![CDATA[
+var wpcf7={"apiSettings":{"root":"https:\/\/www.become.co\/blog\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"}};
+//]]></script>
+<script type='text/javascript' src='https://www.become.co/blog/wp-content/plugins/contact-form-7/includes/js/scripts.js,qver=5.2.2.pagespeed.jm.3szdCBLCvd.js' id='contact-form-7-js'></script>
+<script type='text/javascript' src='https://www.become.co/blog/wp-content/plugins/faq-responsive/assets/js/accordion.js?ver=5.5.1' id='call_faq-js-front-js'></script>
+<script type='text/javascript' id='toc-front-js-extra'>//<![CDATA[
+var tocplus={"visibility_show":"show","visibility_hide":"hide","width":"Auto"};
+//]]></script>
+<script src="https://www.become.co/blog/wp-content/plugins,_table-of-contents-plus,_front.min.js,qver==2002+plugins,_wp-show-more,_wpsm-script.js,qver==1.0.1+themes,_nisarg,_js,_skip-link-focus-fix.js,qver==20130115+themes,_nisarg,_js,_script.js,qver==5.5.1+themes,_nisarg,_js,_nisarg.js,qver==5.5.1.pagespeed.jc.TxRfPTBPwG.js"></script><script>eval(mod_pagespeed_equLjWQ9UA);</script>
+<script>eval(mod_pagespeed_qA3bzcnpH3);</script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js?ver=5.5.1' id='bootstrap-child-js'></script>
+<script>eval(mod_pagespeed_q9kC90idL8);</script>
+<script>eval(mod_pagespeed_L0MNa_4k7P);</script>
+<script>eval(mod_pagespeed_O4T81SW9Um);</script>
+<!--[if lt IE 9]>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js?ver=3.7.3' id='html5shiv-child-js'></script>
+<![endif]-->
+<script type='text/javascript' id='q2w3_fixed_widget-js-extra'>//<![CDATA[
+var q2w3_sidebar_options=[{"sidebar":"us_general_sidebar","margin_top":10,"margin_bottom":0,"stop_id":"","screen_max_width":0,"screen_max_height":0,"width_inherit":false,"refresh_interval":1500,"window_load_hook":false,"disable_mo_api":false,"widgets":["text-5"]},{"sidebar":"hard_sale_sidebar","margin_top":10,"margin_bottom":0,"stop_id":"","screen_max_width":0,"screen_max_height":0,"width_inherit":false,"refresh_interval":1500,"window_load_hook":false,"disable_mo_api":false,"widgets":["text-8"]},{"sidebar":"sidebar-1","margin_top":10,"margin_bottom":0,"stop_id":"","screen_max_width":0,"screen_max_height":0,"width_inherit":false,"refresh_interval":1500,"window_load_hook":false,"disable_mo_api":false,"widgets":["text-3"]}];
+//]]></script>
+<script type='text/javascript' src='https://www.become.co/blog/wp-content/plugins/q2w3-fixed-widget/js/q2w3-fixed-widget.min.js,qver=5.1.9.pagespeed.ce.BaR6TN7yen.js' id='q2w3_fixed_widget-js'></script>
+<script type='text/javascript' src='https://s7.addthis.com/js/300/addthis_widget.js?ver=5.5.1#pubid=ra-5911c15d3ff1c36e' id='addthis_widget-js'></script>
+<script type='text/javascript' id='jquery-lazyloadxt-js-extra'>//<![CDATA[
+var a3_lazyload_params={"apply_images":"1","apply_videos":"1"};
+//]]></script>
+<script src="//www.become.co/blog/wp-content/plugins/a3-lazy-load/assets/js/jquery.lazyloadxt.extra.min.js,qver==2.4.1+jquery.lazyloadxt.srcset.min.js,qver==2.4.1.pagespeed.jc.PJZYlIoFQk.js"></script><script>eval(mod_pagespeed_3yd$jTV26r);</script>
+<script>eval(mod_pagespeed_btcQMPM0kN);</script>
+<script type='text/javascript' id='jquery-lazyloadxt-extend-js-extra'>//<![CDATA[
+var a3_lazyload_extend_params={"edgeY":"0","horizontal_container_classnames":""};
+//]]></script>
+<script type='text/javascript' src='//www.become.co/blog/wp-content/plugins/a3-lazy-load/assets/js/jquery.lazyloadxt.extend.js?ver=2.4.1' id='jquery-lazyloadxt-extend-js'></script>
+<script type='text/javascript' src='https://www.become.co/blog/wp-includes/js/wp-embed.min.js?ver=5.5.1' id='wp-embed-js'></script>
+<script type='text/javascript' src='https://www.google.com/recaptcha/api.js?ver=5.5.1' id='google-recaptcha-js'></script>
+<script type='text/javascript' src='https://www.become.co/blog/wp-content/themes/nisarg-child/assets/js/quick_jump_nav.js?ver=1603102335' id='quick-nav-js'></script>
+<script type='text/javascript' src='https://www.become.co/blog/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.0.11' id='elementor-frontend-modules-js'></script>
+<script type='text/javascript' src='https://www.become.co/blog/wp-content/plugins/elementor-pro/assets/lib/sticky/jquery.sticky.min.js?ver=3.0.5' id='elementor-sticky-js'></script>
+<script type='text/javascript' id='elementor-pro-frontend-js-before'>var ElementorProFrontendConfig={"ajaxurl":"https:\/\/www.become.co\/blog\/wp-admin\/admin-ajax.php","nonce":"fac6c79727","i18n":{"toc_no_headings_found":"No headings were found on this page."},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"google":{"title":"Google+","has_counter":true},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"delicious":{"title":"Delicious"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"},"weixin":{"title":"WeChat"},"weibo":{"title":"Weibo"}},"facebook_sdk":{"lang":"en_US","app_id":""},"lottie":{"defaultAnimationUrl":"https:\/\/www.become.co\/blog\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}};</script>
+<script type='text/javascript' src='https://www.become.co/blog/wp-content/plugins/elementor-pro/assets/js/frontend.min.js,qver=3.0.5.pagespeed.jm.Ba0WdXB1a5.js' id='elementor-pro-frontend-js'></script>
+<script src="https://www.become.co/blog/wp-includes,_js,_jquery,_ui,_position.min.js,qver==1.11.4+wp-content,_plugins,_elementor,_assets,_lib,_dialog,_dialog.min.js,qver==4.8.1+wp-content,_plugins,_elementor,_assets,_lib,_waypoints,_waypoints.min.js,qver==4.0.2.pagespeed.jc.TNYwexY33r.js"></script><script>eval(mod_pagespeed_7MdTI0F7vn);</script>
+<script>eval(mod_pagespeed_TyBVpTKhHu);</script>
+<script>eval(mod_pagespeed_SCxyK7Wce6);</script>
+<script type='text/javascript' src='https://www.become.co/blog/wp-content/plugins/elementor/assets/lib/swiper/swiper.min.js,qver=5.3.6.pagespeed.jm.0kJnTpXBgJ.js' id='swiper-js'></script>
+<script type='text/javascript' src='https://www.become.co/blog/wp-content/plugins/elementor/assets/lib/share-link/share-link.min.js,qver=3.0.11.pagespeed.jm.kG_9MR81ou.js' id='share-link-js'></script>
+<script type='text/javascript' id='elementor-frontend-js-before'>var elementorFrontendConfig={"environmentMode":{"edit":false,"wpPreview":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"version":"3.0.11","is_static":false,"legacyMode":{"elementWrappers":true},"urls":{"assets":"https:\/\/www.become.co\/blog\/wp-content\/plugins\/elementor\/assets\/"},"settings":{"page":[],"editorPreferences":[]},"kit":{"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":10229,"title":"The%205%20Types%20of%20Business-Level%20Strategies%20Explained","excerpt":"","featuredImage":"https:\/\/www.become.co\/blog\/wp-content\/uploads\/2019\/11\/business-stratiges-487x270.jpg"}};</script>
+<script type='text/javascript' src='https://www.become.co/blog/wp-content/plugins/elementor/assets/js/frontend.min.js,qver=3.0.11.pagespeed.jm.ywYFfgmTxG.js' id='elementor-frontend-js'></script>
+
+
+<!-- CJT Global Block (3) - Analytics - START -->
+
+<script type="text/javascript">window._tfa=window._tfa||[];_tfa.push({notify:'mark',type:'Lending_Express'});</script>
+<script src="//cdn.taboola.com/libtrc/algoseller-network/tfa.js"></script>
+
+
+<script></script>
+
+
+<!-- CJT Global Block (3) - Analytics - END -->
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://www.become.co/blog/wp-content/themes/nisarg-child/assets/js/main.js+us-main.js.pagespeed.jc.atuka6sHXz.js"></script><script>eval(mod_pagespeed_3d9b2I$YTc);</script>
+<script>eval(mod_pagespeed_24gt5HwJ2t);</script>
+
+<!-- Modal Processing  -->
+<div class="modal fade simple-modal" data-keyboard="false" id="processing" role="dialog">
+    <div class="modal-dialog" role="document">
+      <!-- Modal content-->
+      <div class="modal-content text-center">
+        <div class="modal-body">
+          <p id="processing_text">Finding relevant lenders...</p>
+          <p class="processing-spinner"><i class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></i></p>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+<!-- Modal Processing  -->
+<div class="modal fade design-pop" data-keyboard="false" id="lenders-searching" role="dialog">
+    <div class="modal-dialog" role="document">
+      <!-- Modal content-->
+      <div class="modal-content text-center">
+        <div class="modal-header">
+          <h4 class="modal-title">Searching Loan Offers For <span style="display:block">"<span class="industry-name"></span>"</span></h4>
+        </div>
+        <div class="modal-body">
+          <div class="found-lender-tick" style="display:none">
+            <i class="fa fa-check"></i>
+          </div>
+          <div class="Orbit">
+            <img src="https://dav3uwijswi8g.cloudfront.net/lending-express-lp/img/Restaraunt-icon.png" style="display:none" id="searching-industry-icon">
+            <img src="https://dav3uwijswi8g.cloudfront.net/lending-express-lp/img/Magnify-img.png" id="searching-magnify">
+          </div>
+          
+          <div class="carousel carousel-showmanymoveone slide" id="LendersCarouselSearch">
+              <div class="carousel-inner">
+                                  <div class="item active">
+                    <div class="col-xs-12 col-sm-6 col-md-3"><img src="/lending-webapp/dist/img/x150540143171414761.png.pagespeed.ic.RRK8fzTdnG.webp" alt="OnDeck" class="img-responsive logo-partner"></div>
+                  </div>
+                                    <div class="item ">
+                    <div class="col-xs-12 col-sm-6 col-md-3"><img src="/lending-webapp/dist/img/x150295484016072393.png.pagespeed.ic.GMwUyIbXEF.webp" alt="Bluevine" class="img-responsive logo-partner"></div>
+                  </div>
+                                    <div class="item ">
+                    <div class="col-xs-12 col-sm-6 col-md-3"><img src="/lending-webapp/dist/img/x157226173141332455.png.pagespeed.ic.Dru0nlGPCv.webp" alt="Fundbox" class="img-responsive logo-partner"></div>
+                  </div>
+                                    <div class="item ">
+                    <div class="col-xs-12 col-sm-6 col-md-3"><img src="/lending-webapp/dist/img/x155110733436114924.png.pagespeed.ic.j6S59aufO0.webp" alt="Kapitus" class="img-responsive logo-partner"></div>
+                  </div>
+                                    <div class="item ">
+                    <div class="col-xs-12 col-sm-6 col-md-3"><img src="/lending-webapp/dist/img/x152283688484325290.jpg.pagespeed.ic.JHFOt8XRmP.webp" alt="Target Advance" class="img-responsive logo-partner"></div>
+                  </div>
+                                    <div class="item ">
+                    <div class="col-xs-12 col-sm-6 col-md-3"><img src="/lending-webapp/dist/img/x150505056512475967.png.pagespeed.ic.zrMSp6npE1.webp" alt="Fora Financial" class="img-responsive logo-partner"></div>
+                  </div>
+                                    <div class="item ">
+                    <div class="col-xs-12 col-sm-6 col-md-3"><img src="/lending-webapp/dist/img/x153538003700674262.jpg.pagespeed.ic.7A2lR16HNJ.webp" alt="Headway Capital" class="img-responsive logo-partner"></div>
+                  </div>
+                                    <div class="item ">
+                    <div class="col-xs-12 col-sm-6 col-md-3"><img src="/lending-webapp/dist/img/x155645566294437966.png.pagespeed.ic.dehmhe3KzL.webp" alt="Everlasting Capital" class="img-responsive logo-partner"></div>
+                  </div>
+                                    <div class="item ">
+                    <div class="col-xs-12 col-sm-6 col-md-3"><img src="/lending-webapp/dist/img/x158279409443829770.png.pagespeed.ic._XvLMqQxjI.webp" alt="The Business Backer" class="img-responsive logo-partner"></div>
+                  </div>
+                                    <div class="item ">
+                    <div class="col-xs-12 col-sm-6 col-md-3"><img src="/lending-webapp/dist/img/x158606720342030475.png.pagespeed.ic.FT0ak4mFOL.webp" alt="Ready Capital" class="img-responsive logo-partner"></div>
+                  </div>
+                                    <div class="item ">
+                    <div class="col-xs-12 col-sm-6 col-md-3"><img src="/lending-webapp/dist/img/x159221040540854215.png.pagespeed.ic.6zKplNqOOi.webp" alt="Salaryo" class="img-responsive logo-partner"></div>
+                  </div>
+                                    <div class="item ">
+                    <div class="col-xs-12 col-sm-6 col-md-3"><img src="/lending-webapp/dist/img/x159545477456812917.png.pagespeed.ic.Vf02mnDfiX.webp" alt="Bankers Healthcare Group" class="img-responsive logo-partner"></div>
+                  </div>
+                                    <div class="item ">
+                    <div class="col-xs-12 col-sm-6 col-md-3"><img src="/lending-webapp/dist/img/x159836002527086016.png.pagespeed.ic.730FKH_ffh.webp" alt="Fundera" class="img-responsive logo-partner"></div>
+                  </div>
+                                    <div class="item ">
+                    <div class="col-xs-12 col-sm-6 col-md-3"><img src="/lending-webapp/dist/img/x159924419863879367.png.pagespeed.ic.55FEiRZc2Q.webp" alt="SellersFunding" class="img-responsive logo-partner"></div>
+                  </div>
+                                    <div class="item ">
+                    <div class="col-xs-12 col-sm-6 col-md-3"><img src="/lending-webapp/dist/img/x160066894321061347.png.pagespeed.ic.-uGzBVFFol.webp" alt="Payability" class="img-responsive logo-partner"></div>
+                  </div>
+                                    <div class="item ">
+                    <div class="col-xs-12 col-sm-6 col-md-3"><img src="/lending-webapp/dist/img/x160045620027575270.png.pagespeed.ic.gUUCdMPWLx.webp" alt="Kickpay" class="img-responsive logo-partner"></div>
+                  </div>
+                                </div>
+            </div>
+
+
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- Modal FBLA  -->
+<div class="modal fade design-pop" data-keyboard="false" id="fbla" role="dialog">
+<div class="modal-dialog" role="document">
+
+  <!-- Modal content-->
+  <div class="modal-content text-center">
+    <div class="modal-body" style=" padding: 11px;">
+      <p>We appreciate your interest in Become, to make the process easier and even faster<br><br>
+        <a class="btn btn-success btn-lg start-steps" href="/apply/" data-slide-to="1" role="button">Check if you qualify</a>
+        </p>
+    </div>
+  </div>
+
+</div>
+</div>
+
+    <!-- Footer -->
+    <footer id="footer" class="text-center" style="text-align: center !important;">
+    <div id="fix-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h5><a href="/apply/" data-slide-to="1" class="step-buttons">Get business loan offers</a></h5>
+                                        <a class="btn btn-primary btn-white btn-lg step-buttons start-steps" href="/apply/?k=blogapply4" data-slide-to="1" role="button">Apply Now</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-menu" style="display:none">
+          <div class="container">
+            <div class="row">
+
+
+                <div class="col-md-3"><a href="/"><img src="https://dav3uwijswi8g.cloudfront.net/become/homepage/img/become-logo-b.svg" class="logo-footer"></a></div>
+
+                                        <div class="col-md-2">
+                          <h5><a data-no-change="1" href="https://www.become.co/business-loans">Solutions</a></h5>
+                          <ul class="list-unstyled footer-menu-ul">
+                                                        <li><a data-no-change="1" href="/unsecured-business-loans/">Unsecured Business Loans</a></li>
+                                                            <li><a data-no-change="1" href="https://www.become.co/beprofit-profit-tracker/">BeProfit - Profit Tracker</a></li>
+                                                            <li><a data-no-change="1" href="https://www.become.co/ecommerce-loans/">E-commerce Funding</a></li>
+                                                            <li><a data-no-change="1" href="/business-line-of-credit/">Line of Credit</a></li>
+                                                            <li><a data-no-change="1" href="/start-up-loan/">Start Up Loans</a></li>
+                                                            <li><a data-no-change="1" href="/invoice-factoring/">Invoice Factoring</a></li>
+                                                            <li><a data-no-change="1" href="/merchant-cash-advance/">Merchant Cash Advance</a></li>
+                                                            <li><a data-no-change="1" href="/sba-loans/">SBA Loans</a></li>
+                                                            <li><a data-no-change="1" href="/business-equipment-loans/">Equipment and Vehicle Finance</a></li>
+                                                            <li><a data-no-change="1" href="/asset-based-loan/">Asset-Based Loan</a></li>
+                                                            <li><a data-no-change="1" href="https://www.become.co/blog/industries/">Industries We Serve</a></li>
+                                                        </ul>
+                        </div>
+                                                <div class="col-md-2">
+                          <h5><a data-no-change="1" href="https://www.become.co/wp/about">Company</a></h5>
+                          <ul class="list-unstyled footer-menu-ul">
+                                                        <li><a data-no-change="1" href="https://www.become.co/blog/about-us/">About Us</a></li>
+                                                            <li><a data-no-change="1" href="https://www.become.co/blog/review-us/">Testimonials</a></li>
+                                                            <li><a data-no-change="1" href="https://www.become.co/blog/us-reviews/">Lenders Reviews</a></li>
+                                                            <li><a data-no-change="1" href="https://www.become.co/lending-webapp/">Login</a></li>
+                                                        </ul>
+                        </div>
+                                                <div class="col-md-2">
+                          <h5><a data-no-change="1" href="#">Resources</a></h5>
+                          <ul class="list-unstyled footer-menu-ul">
+                                                        <li><a data-no-change="1" href="/blog/">Blog</a></li>
+                                                            <li><a data-no-change="1" href="https://www.become.co/blog/fq/">FAQ</a></li>
+                                                            <li><a data-no-change="1" href="https://www.become.co/blog/ecommerce-faq/">E-Commerce Q&A</a></li>
+                                                            <li><a data-no-change="1" href="https://docs.google.com/document/d/1FTGYEpyiC03tZbPA8NNmbCKXT-18NNmUbH200ktR5AY/edit#">Press Kit</a></li>
+                                                            <li><a data-no-change="1" href="https://www.become.co/lending-webapp/academy/">Academy</a></li>
+                                                        </ul>
+                        </div>
+                        
+                <div class="col-md-3" id="contact-footer">
+                  <h5>Contact Us</h5>
+                  <ul class="list-unstyled contact-details">
+                    <li><a href="tel:8889305808"><i class="fa fa-phone"></i><span class="phone_number_value">838-800-0664</span></a></li>
+                    <li><a href="mailto:support@become.co" target="_blank"><i class="fa fa-envelope"></i><b>support</b>@become.co</a></li>
+                    <li><a href="mailto:partnership@become.co" target="_blank"><i class="fa fa-suitcase"></i><b>partnership</b>@become.co</a></li>
+                    <li><i class="fa fa-map-marker"></i>400 Concar Dr, San Mateo, CA 94402, USA</li>
+                  </ul>
+                  <div class="col-md-2"></div>
+                  <h5>Follow Us</h5>
+                    <ul class="list-unstyled social-icons">
+                      <li><a href="https://www.facebook.com/www.become.co/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                      <li><a href="https://www.linkedin.com/company/15206308" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                      <li><a href="https://www.youtube.com/channel/UCKVkhtK8cK509NRsKgu6pPw" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                      <li><a href="https://www.instagram.com/become__co/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                      <li><a href="https://twitter.com/Become_co" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+          </div>
+    </div>
+    <div>
+            <div class="container" style="text-align: center !important;">
+              <div class="col-md-12">
+              <div class="row" id="seals-footer" style="display:none">
+                <div class="V2-mcafee v2sprite"></div>
+                <div class="V2comodossl v2sprite"></div>
+                <div class="V2TrustSite v2sprite"></div>
+                <div class="V2TrustPilot v2sprite"></div>
+              </div>
+              </div>
+                                <div class="col-md-12 declimer-lending">
+                    Become provides you with easy online application services to access loans from third party lenders. Become is not a loan provider, loan broker, or other funding provider and does not provide actual loans or any kind of advice. Approval of an actual loan from a third-party lender is subject to a separate assessment process by the third-party lender and the loan is subject to the third-party lender's terms and conditions.
+                    <br>Loan approval time may vary and is not guaranteed
+                </div>
+                                <br>
+                <br>
+                <a class="privacy-link" data-toggle="modal" href="https://www.become.co/blog/privacy-modal/" data-target="#privacy">Privacy Policy</a>
+                <a class="privacy-link" data-toggle="modal" href="https://www.become.co/blog/terms/" data-target="#privacy"> | Terms And Conditions  | </a>
+                <a class="privacy-link" href="https://www.become.co/lending-webapp/">Login</a>
+                <span class="privacy-link" style="color: #777;">| San Mateo, California, USA | 838-800-0664</span>
+
+
+                <p class="text-muted" style="text-align:center;font-size:13px;"> 2020 Become - All Rights Reserved</p>
+            </div>
+    </div>
+</footer>
+
+
+<div class="modal fade text-left" id="privacy" data-spy="scroll">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
+
+<link href="/A.apply,,_assets,,_scss,,_styles-below.css,,qv==2.22+blog,,_wp-content,,_themes,,_nisarg-child,,_us-custom.css,,qModPagespeed==off,Mcc.cROdjb40qk.css.pagespeed.cf.Q1hJkxtW7p.css" rel="stylesheet"/>
+
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"1f41b76344","applicationID":"237184536","transactionName":"YwRbNkVXC0RSAkBaX1pOeAFDXwpZHBJdXVdYBBQXRBsXUkAOQUFTURI=","queueTime":0,"applicationTime":1881,"atts":"T0NYQA1NGEo=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+
+</html>
